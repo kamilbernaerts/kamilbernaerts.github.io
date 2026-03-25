@@ -565,24 +565,25 @@ p {
     padding: 1.5rem 0 1.25rem;
   }
 
-  .hero-layout {
+.hero-layout {
     grid-template-columns: 1fr;
     gap: 0;
   }
 
   .hero-photo,
   .hero-photo-placeholder {
-    width: 100px;
-    height: 100px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1rem;
+    float: left;
+    margin: 0.25rem 1rem 0.5rem 0;
   }
 
   .hero h1 {
     margin-bottom: 0.75rem;
   }
-
+  
   /* --- Sections --- */
   .section {
     padding: 1.5rem 0;
@@ -598,7 +599,7 @@ p {
 
   /* --- Info grid: 2 columns on tablet, see 480px for 1-col --- */
   .info-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
@@ -606,6 +607,7 @@ p {
   .pub-item {
     flex-direction: column;
     gap: 0.125rem;
+    padding: 0.625rem 0;
   }
 
   .pub-meta {

@@ -2,27 +2,27 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="CV" description="Academic curriculum vitae of Kamil Bernaerts.">
+<BaseLayout title="CV" description="Academic curriculum vitae of Dr. Kamil Bernaerts.">
 
   <section class="page-header">
     <div class="container">
       <h1>Curriculum vitae</h1>
-      <p class="lead">
-        <a href="/Academic_cv_Kamil_Bernaerts.pdf" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; padding: 0.5rem 1rem; border: 1px solid var(--color-accent); border-radius: 4px; color: var(--color-accent);">
+      <div style="margin-top: 1.25rem;">
+        <a href="/Academic_cv_Kamil_Bernaerts.pdf" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9375rem; padding: 0.625rem 1.25rem; border: 1px solid var(--color-accent); border-radius: 4px; color: var(--color-accent); text-decoration: none;">
           Download full CV (PDF) →
         </a>
-      </p>
+      </div>
     </div>
   </section>
 
   <!-- POSITIONS -->
   <section class="section">
     <div class="container">
-      <p class="section__label">Positions</p>
+      <p class="section__label">Current positions</p>
       <div class="pub-item">
         <div>
           <p class="pub-title">Post-doctoral researcher</p>
-          <p class="pub-authors">Vrije Universiteit Brussel · Programme: Evaluating Democratic Governance in Europe (EDGE)</p>
+          <p class="pub-authors">Vrije Universiteit Brussel · DFUTURE Research Centre</p>
         </div>
         <div class="pub-meta"><p class="pub-year">2025–present</p></div>
       </div>
@@ -35,8 +35,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="pub-item">
         <div>
-          <p class="pub-title">Academic member</p>
-          <p class="pub-authors">Hannah Arendt Institute for Diversity, Urbanity and Citizenship, Mechelen</p>
+          <p class="pub-title">Senior academic fellow</p>
+          <p class="pub-authors">Hannah Arendt Institute, Mechelen</p>
         </div>
         <div class="pub-meta"><p class="pub-year">2022–present</p></div>
       </div>
@@ -50,7 +50,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="pub-item">
         <div>
           <p class="pub-title">PhD in Political Science</p>
-          <p class="pub-authors">Vrije Universiteit Brussel &amp; University of Warwick (EUTOPIA Co-tutelle)</p>
+          <p class="pub-authors">Vrije Universiteit Brussel &amp; University of Warwick · EUTOPIA Co-tutelle</p>
         </div>
         <div class="pub-meta"><p class="pub-year">2021–2025</p></div>
       </div>
@@ -78,7 +78,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="pub-item">
         <div>
           <p class="pub-title">Frank Cass Prize for Best Article of 2023</p>
-          <p class="pub-authors">Democratization (journal)</p>
+          <p class="pub-authors"><em>Democratization</em> (journal)</p>
         </div>
         <div class="pub-meta"><p class="pub-year">2024</p></div>
       </div>
@@ -99,58 +99,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- SERVICE -->
+  <!-- AT A GLANCE -->
   <section class="section">
     <div class="container">
-      <p class="section__label">Professional service</p>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Peer reviewer</p>
-          <p class="pub-authors">Acta Politica · Social Science Quarterly · Social Inclusion · European Journal of Political Research · Nature Human Behaviour</p>
-        </div>
-      </div>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Workshop co-organiser</p>
-          <p class="pub-authors">"Polarising Performances or Reengaging the Audience?" · University of Warwick (2025)</p>
-        </div>
-      </div>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Panel chair</p>
-          <p class="pub-authors">WVS Conference, King's College London (2024) · ECPR General Conference, Innsbruck (2022)</p>
-        </div>
-      </div>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Political Science &amp; Sociology Junior Talks</p>
-          <p class="pub-authors">Co-organiser of interdisciplinary seminar series for junior researchers, VUB (2022–2024)</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS & LANGUAGES -->
-  <section class="section">
-    <div class="container">
+      <p class="section__label">At a glance</p>
       <div class="info-grid">
         <div>
           <p class="info-grid__label">Languages</p>
           <p class="info-grid__value">Dutch (native)<br>English (proficient)</p>
         </div>
         <div>
-          <p class="info-grid__label">Research skills</p>
-          <p class="info-grid__value">R (3+ years, self-taught)<br>Survey design &amp; fielding<br>Causal inference</p>
+          <p class="info-grid__label">Skills</p>
+          <p class="info-grid__value">R (3+ years)<br>Survey design &amp; fielding<br>Causal inference</p>
         </div>
         <div>
-          <p class="info-grid__label">References</p>
-          <p class="info-grid__value">
-            Prof. Didier Caluwaerts (VUB)<br>
-            Prof. Michael Saward (Warwick)<br>
-            Dr. Nino Junius (VUB)
-          </p>
+          <p class="info-grid__label">Peer review</p>
+          <p class="info-grid__value">Acta Politica · EJPR<br>Nature Human Behaviour<br>Social Science Quarterly</p>
         </div>
       </div>
+      <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-top: 1.5rem;">
+        For a complete overview of publications, conference presentations, teaching experience, and professional service, please 
+        <a href="/Academic_cv_Kamil_Bernaerts.pdf" target="_blank" rel="noopener">download the full CV</a>.
+      </p>
     </div>
   </section>
 

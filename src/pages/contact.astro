@@ -1,44 +1,45 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-
 <BaseLayout title="Contact" description="Get in touch with Kamil Bernaerts.">
-
   <section class="page-header">
     <div class="container">
       <h1>Contact</h1>
     </div>
   </section>
-
   <section class="section">
     <div class="container">
-      <div class="info-grid">
-        <div>
-          <p class="info-grid__label">Email</p>
-          <p class="info-grid__value">
-            <a href="mailto:kamil.bernaerts@vub.be">kamil.bernaerts@vub.be</a><br>
-            <a href="mailto:kamil.bernaerts@uhasselt.be">kamil.bernaerts@uhasselt.be</a><br>
-            <a href="mailto:kamil.bernaerts@hannah-arendt.institute">kamil.bernaerts@hannah-arendt.institute</a>
-          </p>
+      <div style="display: grid; grid-template-columns: 1fr 200px; gap: 2.5rem; align-items: start;">
+        <div class="info-grid" style="border-top: none; padding-top: 0;">
+          <div>
+            <p class="info-grid__label">Email</p>
+            <p class="info-grid__value">
+              <a href="mailto:kamil.bernaerts@vub.be">kamil.bernaerts@vub.be</a><br>
+              <a href="mailto:kamil.bernaerts@uhasselt.be">kamil.bernaerts@uhasselt.be</a><br>
+              <a href="mailto:kamil.bernaerts@hannah-arendt.institute">kamil.bernaerts@hannah-arendt.institute</a>
+            </p>
+          </div>
+          <div>
+            <p class="info-grid__label">Office</p>
+            <p class="info-grid__value">
+              Vrije Universiteit Brussel<br>
+              Pleinlaan 2<br>
+              1050 Brussels, Belgium
+            </p>
+          </div>
+          <div>
+            <p class="info-grid__label">Online</p>
+            <p class="info-grid__value">
+              <a href="https://kamilbernaerts.bsky.social" target="_blank" rel="noopener">Bluesky</a><br>
+              <a href="https://be.linkedin.com/in/kamil-bernaerts-431753201" target="_blank" rel="noopener">LinkedIn</a><br>
+              <a href="https://scholar.google.com/citations?user=7Pmo70UAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+            </p>
+          </div>
         </div>
         <div>
-          <p class="info-grid__label">Office</p>
-          <p class="info-grid__value">
-            Vrije Universiteit Brussel<br>
-            Pleinlaan 2<br>
-            1050 Brussels, Belgium
-          </p>
-        </div>
-        <div>
-          <p class="info-grid__label">Online</p>
-          <p class="info-grid__value">
-            <a href="https://kamilbernaerts.bsky.social" target="_blank" rel="noopener">Bluesky</a><br>
-            <a href="https://be.linkedin.com/in/kamil-bernaerts-431753201" target="_blank" rel="noopener">LinkedIn</a><br>
-            <a href="https://scholar.google.com/citations?user=7Pmo70UAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-          </p>
+          <img src="/images/profiel-vub.jpeg" alt="Dr. Kamil Bernaerts" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;" />
         </div>
       </div>
-
       <div style="max-width: 680px; margin-top: 2rem;">
         <h3 style="margin-bottom: 0.75rem;">For public engagement</h3>
         <p style="font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.75; margin-bottom: 1.5rem;">
@@ -46,7 +47,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           on topics related to polarisation, democratic resilience, and the state of democracy. 
           See my <a href="/outreach/">outreach page</a> for more details.
         </p>
-
         <h3 style="margin-bottom: 0.75rem;">For academic inquiries</h3>
         <p style="font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.75;">
           If you're interested in collaborating on research projects and papers or have questions about my work, please reach out via email. 
@@ -54,5 +54,4 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </div>
   </section>
-
 </BaseLayout>

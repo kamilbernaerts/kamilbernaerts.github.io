@@ -480,12 +480,6 @@ p {
 
 /* ==========================================================================
    MOBILE (max-width: 768px)
-   
-   Design philosophy: mobile is not a degraded desktop.
-   - Single column reading flow with generous whitespace
-   - Images: centered + compact (identity), or full-width (documentary), never floated
-   - Editorial feel preserved through serif headings and spacing rhythm
-   - All inline grids become single-column via one universal rule
    ========================================================================== */
 @media (max-width: 768px) {
 
@@ -560,20 +554,19 @@ p {
     color: var(--color-accent);
   }
 
-  /* --- Hero --- */
+  /* --- Hero: title, then landscape photo banner, then text --- */
   .hero {
-    padding: 1.5rem 0 1.25rem;
+    padding: 1.25rem 0 1rem;
   }
 
-.hero-layout {
-    display: grid !important;
-    grid-template-columns: 56px 1fr;
-    gap: 0.75rem;
-    align-items: start;
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .hero-layout > div:last-child {
     order: -1;
+    margin-bottom: 1rem;
   }
 
   .hero-layout > div:last-child p {
@@ -582,19 +575,22 @@ p {
 
   .hero-photo,
   .hero-photo-placeholder {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
+    width: calc(100% + 2.5rem);
+    margin-left: -1.25rem;
+    height: 180px;
+    border-radius: 0;
     object-fit: cover;
+    object-position: center 20%;
   }
 
   .hero h1 {
     margin-bottom: 0.75rem;
+    margin-top: 0.25rem;
   }
-  
+
   /* --- Sections --- */
   .section {
-    padding: 1.5rem 0;
+    padding: 1.25rem 0;
   }
 
   .page-header {
@@ -605,13 +601,14 @@ p {
     max-width: 100%;
   }
 
-  /* --- Info grid: 2 columns on tablet, see 480px for 1-col --- */
+  /* --- Info grid: single column --- */
   .info-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.75rem;
+    padding: 1rem 0;
   }
 
-  /* --- Publication items: stack --- */
+  /* --- Publication items: tighter --- */
   .pub-item {
     flex-direction: column;
     gap: 0.125rem;
@@ -626,18 +623,18 @@ p {
     font-size: 0.875rem;
   }
 
-  /* --- Project cards: keep 2-col but compact --- */
+  /* --- Project cards: single column --- */
   .project-grid {
+    grid-template-columns: 1fr;
     gap: 0.5rem;
   }
 
   .project-card {
-    padding: 0.75rem;
+    padding: 0.875rem;
   }
 
   .project-card__desc {
-    font-size: 0.75rem;
-    line-height: 1.45;
+    font-size: 0.8125rem;
   }
 
   /* --- Blog --- */
@@ -652,7 +649,8 @@ p {
 
   /* --- Footer --- */
   .footer-links {
-    gap: 0.5rem 1.25rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   /* --- Pills --- */
@@ -662,71 +660,63 @@ p {
   }
 
   /*
-   * THE UNIVERSAL GRID RULE
-   * All inline style grids (used on Research, PhD, Teaching, Outreach pages)
-   * collapse to single column. Images get centered and constrained.
+   * UNIVERSAL GRID COLLAPSE
+   * All inline-style grids on subpages become single-column.
    */
   [style*="display: grid"] {
     display: block !important;
   }
 
   /*
-   * IMAGE STRATEGY:
-   * - Book covers / profile-style images: centered, max 160px
-   * - Documentary photos (defence, teaching, speaking): full-width
-   * - Logos: inline, small
+   * IMAGE STRATEGY
    */
 
-  /* Book cover (identified by alt text containing "cover") */
+  /* Book covers: centered, compact */
   img[alt*="cover" i],
   img[alt*="Cover" i] {
     max-width: 160px;
-    margin: 0 auto 1.25rem;
+    margin: 0 auto 1rem;
     display: block;
   }
 
-  /* Defence and event photos: full-width with no border-radius */
+  /* Defence / event photos: full-width banner */
   img[alt*="defence" i],
   img[alt*="defense" i],
-  img[alt*="public lecture" i],
-  img[alt*="Lecture" i] {
-    width: 100%;
-    max-width: 100%;
+  img[alt*="public lecture" i] {
+    width: calc(100% + 2.5rem);
+    max-width: none;
+    margin-left: -1.25rem;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
     border-radius: 0 !important;
-    margin: 1rem 0;
   }
 
-  /* Logos: keep small and left-aligned */
+  /* Teaching photo */
+  img[alt*="Lecture at" i] {
+    width: 100%;
+    border-radius: 4px;
+    margin: 0.75rem 0;
+  }
+
+  /* Logos: small, left-aligned */
   img[alt*="logo" i] {
     max-width: 120px;
     margin-bottom: 0.75rem;
   }
 
-  /* Teaching photo: constrained */
-  img[alt*="Lecture at" i] {
-    width: 100%;
-    max-width: 100%;
-    border-radius: 4px;
-    margin: 0.75rem 0;
-  }
-
-  /* Caption text below images in collapsed grids */
-  [style*="display: grid"] > div > p:last-child {
-    text-align: center;
-  }
-
-  /* Reset max-width constraints on mobile */
+  /* Reset max-width constraints */
   [style*="max-width: 720px"],
   [style*="max-width: 680px"] {
     max-width: 100% !important;
   }
 
-  /* Bordered cards (outreach): less padding */
+  /* Bordered cards: less padding */
   [style*="padding: 2rem"] {
     padding: 1.25rem !important;
   }
 
-  /* Absolute-positioned elements (HAI logo): go static */
+  /* Absolute elements (HAI logo): go static */
   [style*="position: absolute"] {
     position: static !important;
     top: auto !important;
@@ -734,12 +724,12 @@ p {
     margin-bottom: 0.75rem;
   }
 
-  /* Box-shadow: remove on mobile for cleaner look */
+  /* Remove box-shadows on mobile */
   [style*="box-shadow"] {
     box-shadow: none !important;
   }
 
-  /* Justify text: disable on mobile for better readability */
+  /* Disable justify on mobile */
   [style*="text-align: justify"] {
     text-align: left !important;
   }
@@ -758,24 +748,24 @@ p {
     padding: 0 1rem;
   }
 
-  .info-grid {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
   .hero-photo,
   .hero-photo-placeholder {
-    width: 80px;
-    height: 80px;
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    height: 150px;
   }
 
   img[alt*="cover" i],
   img[alt*="Cover" i] {
     max-width: 130px;
+  }
+
+  img[alt*="defence" i],
+  img[alt*="defense" i],
+  img[alt*="public lecture" i] {
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    height: 170px;
   }
 
   .mobile-menu nav a {

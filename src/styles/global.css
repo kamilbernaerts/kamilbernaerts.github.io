@@ -576,6 +576,7 @@ p {
   .hero-photo,
   .hero-photo-placeholder {
     width: calc(100% + 2.5rem);
+    max-width: none;
     margin-left: -1.25rem;
     height: 180px;
     border-radius: 0;
@@ -714,6 +715,15 @@ p {
   /* Bordered cards: less padding */
   [style*="padding: 2rem"] {
     padding: 1.25rem !important;
+  }
+
+  /* Ensure consistent block spacing after grid collapse */
+  [style*="display: grid"] > div {
+    margin-bottom: 1.25rem;
+  }
+
+  [style*="display: grid"] > div:last-child {
+    margin-bottom: 0;
   }
 
   /* Absolute elements (HAI logo): go static */

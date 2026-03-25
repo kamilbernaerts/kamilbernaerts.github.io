@@ -132,10 +132,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <!-- PHOTO -->
   <section class="section">
-    <div class="container">
-      <img src="/images/public-speaking.jpg" alt="Kamil Bernaerts giving a public lecture" style="width: 100%; max-width: 800px; border-radius: 4px;" />
-      <p style="font-size: 0.75rem; color: var(--color-text-faint); margin-top: 0.5rem;">&copy; Greetje Van Buggenhout</p>
-    </div>
-  </section>
+  <div class="container">
+    <figure style="display: flex; flex-direction: column; align-items: center; margin: 0; text-align: center;">
+      <img 
+        src="/images/public-speaking.jpg" 
+        alt="Kamil Bernaerts giving a public lecture" 
+        style="width: 100%; max-width: 800px; border-radius: 4px;" 
+      />
+      <figcaption style="font-size: 0.75rem; color: var(--color-text-faint); margin-top: 0.5rem;">
+        &copy; Greetje Van Buggenhout
+      </figcaption>
+    </figure>
+  </div>
+</section>
 
 </BaseLayout>

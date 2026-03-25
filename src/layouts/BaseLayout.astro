@@ -9,9 +9,6 @@ const currentPath = Astro.url.pathname;
 ---
 <!DOCTYPE html>
 <html lang={lang}>
-<script data-goatcounter="https://kamilbernaerts.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title} — Dr. Kamil Bernaerts</title>
@@ -21,6 +18,8 @@ const currentPath = Astro.url.pathname;
   <meta property="og:type" content="website" />
   <link rel="canonical" href={`https://kamilbernaerts.com${currentPath}`} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script data-goatcounter="https://kamilbernaerts.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<head>
 </head>
 <body>
   <header class="site-header">

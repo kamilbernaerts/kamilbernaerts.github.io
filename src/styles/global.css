@@ -566,18 +566,26 @@ p {
   }
 
 .hero-layout {
-    grid-template-columns: 1fr;
-    gap: 0;
+    display: grid !important;
+    grid-template-columns: 56px 1fr;
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  .hero-layout > div:last-child {
+    order: -1;
+  }
+
+  .hero-layout > div:last-child p {
+    display: none;
   }
 
   .hero-photo,
   .hero-photo-placeholder {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     object-fit: cover;
-    float: left;
-    margin: 0.25rem 1rem 0.5rem 0;
   }
 
   .hero h1 {

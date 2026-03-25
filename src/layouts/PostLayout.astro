@@ -3,18 +3,9 @@
 // Gedeelde lay-out voor alle blog posts.
 // Gebruik dit via de 'layout' frontmatter in je .md bestanden.
 
-export interface Props {
-  title: string;
-  description?: string;
-  date: string;           // bv. "20 oktober 2022"
-  lang?: string;          // "NL" of "EN" (optioneel)
-  venue?: string;         // bv. "Stuk Rood Vlees" (optioneel — weglaten bij originele posts)
-  venueUrl?: string;      // URL van de oorspronkelijke publicatie (optioneel)
-  authors?: string;       // bv. "met Benjamin Blanckaert & Didier Caluwaerts" (optioneel)
-  tags?: string[];        // bv. ["Polarisatie", "Democratie"] (optioneel)
-}
-
-const { title, description, date, lang, venue, venueUrl, authors, tags } = Astro.props;
+// Astro stuurt frontmatter van .md bestanden door via Astro.props.frontmatter.
+// We lezen altijd uit frontmatter (werkt voor zowel .md als .astro bestanden).
+const { title, description, date, lang, venue, venueUrl, authors, tags } = Astro.props.frontmatter ?? Astro.props;
 
 import BaseLayout from './BaseLayout.astro';
 ---

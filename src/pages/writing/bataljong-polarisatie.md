@@ -12,9 +12,6 @@ lang: "NL"
 venue: "Dropzone (Bataljong)"
 venueUrl: "https://online.fliphtml5.com/pcvtf/olzv/#p=6-"
 
-# Verwijder de regel hieronder als je dit solo schreef
-# authors: "met ..."
-
 tags: ["Polarisatie", "Democratie", "Jongeren"]
 ---
 

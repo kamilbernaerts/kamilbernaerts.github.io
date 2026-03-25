@@ -10,10 +10,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- DISSERTATION INFO + ABSTRACT + BOOK COVER -->
+  <!-- DISSERTATION INFO + BOOK COVER -->
   <section class="section">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 280px; gap: 3rem; align-items: start;">
+      <div style="display: grid; grid-template-columns: 1fr 240px; gap: 3rem; align-items: start;">
         <div>
           <p class="section__label">Dissertation</p>
           <h2 style="margin-bottom: 1rem;">Friends or Foes: Does polarisation really undermine democracy?</h2>
@@ -36,42 +36,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </div>
 
-          <h3 style="margin-bottom: 0.5rem; font-size: 1.1rem;">Abstract</h3>
-          <p style="font-size: 0.8125rem; color: var(--color-text-secondary); line-height: 1.7; text-align: justify;">
-            The relationship between political polarisation and democracy has become a central concern in political science, yet the nature of this connection remains contested. This dissertation addresses the puzzle by arguing that to understand the democratic implications of polarisation, we must distinguish between different types of polarisation and different types of democratic institutional design. 
-            Drawing on a survey experiment in Belgium and the UK, and cross-national data from over 100 countries globally, my dissertation reveals that not all polarisation is equally detrimental. Affective polarisation measured as dislike toward political parties shows little to no negative relationship with democratic attitudes. A more significant concern emerges when polarisation is rooted in societal conflicts such as "wokeness". When divisions manifest as social distance and negative emotions — such as anger or hate — they correlate strongly with increased political intolerance and support for political violence and lower commitment to liberal democracy.
-          </p>
-          <p style="font-size: 0.8125rem; color: var(--color-text-secondary); line-height: 1.7; text-align: justify;">
-            At the same time, my PhD dissertation also demonstrates that democracies are not defenseless against the consequences of polarisation. The findings indicate that political systems built on consensus and power-sharing are associated with lower levels of polarisation compared to majoritarian systems. Crucially, consensus-based institutions can act as a buffer, weakening the link between high levels of polarisation and its most destructive outcomes.
-            Ultimately, my PhD offers a nuanced perspective on political conflict. It moves beyond the narrative that polarisation is uniformly harmful to show that conflict is a normal part of politics. The question should not be how to eliminate division, but how to build robust democratic systems that can channel it productively.
-          </p>
-        </div>
-        <div>
-          <img src="/images/Cover.png" alt="PhD dissertation Kamil Bernaerts, cover painting by Hazel Van Hove" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);" />
-          <p style="font-size: 0.75rem; color: var(--color-text-faint); margin-top: 0.5rem; text-align: center;">PhD book cover, painting by Hazel Van Hove</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOK + DEFENCE PHOTO -->
-  <section class="section">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 320px; gap: 2.5rem; align-items: start;">
-        <div>
-          <h3 style="margin-bottom: 0.75rem;">Book</h3>
           <p style="font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.75;">
-            The dissertation has been published as a monograph by <strong style="font-weight: 500;">VUBPRESS</strong> (2025). 
+            Published as a monograph by <strong style="font-weight: 500;">VUBPRESS</strong> (2025). 
             Read a <a href="https://plc-journal.eu/article/view/25310" target="_blank" rel="noopener">published summary</a> or 
             <a href="https://plc-journal.eu/article/view/25455" target="_blank" rel="noopener">published review</a> in <em>Politics of the Low Countries</em>. 
             A Dutch press release can be found <a href="https://press.vub.ac.be/polarisatie-bedreiging-of-motor-voor-democratie" target="_blank" rel="noopener">here</a>.
           </p>
         </div>
         <div>
-          <img src="/images/defense.JPG" alt="PhD defence at Vrije Universiteit Brussel, September 2025" style="width: 100%; border-radius: 4px;" />
-          <p style="font-size: 0.75rem; color: var(--color-text-faint); margin-top: 0.5rem;">Public defence, September 15, 2025, VUB.</p>
+          <img src="/images/Cover.png" alt="PhD dissertation Kamil Bernaerts, cover painting by Hazel Van Hove" style="width: 100%; border-radius: 4px; box-shadow: 0 2px 12px rgba(0,0,0,0.1);" />
+          <p style="font-size: 0.75rem; color: var(--color-text-faint); margin-top: 0.5rem; text-align: center;">Painting by Hazel Van Hove</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ABSTRACT -->
+  <section class="section">
+    <div class="container">
+      <div style="border-left: 3px solid var(--color-border); padding-left: 1.5rem; max-width: 720px;">
+        <p class="section__label" style="margin-bottom: 0.75rem;">Abstract</p>
+        <p style="font-size: 0.8125rem; color: var(--color-text-secondary); line-height: 1.75; text-align: justify; margin-bottom: 0.75rem;">
+          The relationship between political polarisation and democracy has become a central concern in political science, yet the nature of this connection remains contested. This dissertation addresses the puzzle by arguing that to understand the democratic implications of polarisation, we must distinguish between different types of polarisation and different types of democratic institutional design. 
+          Drawing on a survey experiment in Belgium and the UK, and cross-national data from over 100 countries globally, my dissertation reveals that not all polarisation is equally detrimental. Affective polarisation measured as dislike toward political parties shows little to no negative relationship with democratic attitudes. A more significant concern emerges when polarisation is rooted in societal conflicts such as "wokeness". When divisions manifest as social distance and negative emotions — such as anger or hate — they correlate strongly with increased political intolerance and support for political violence and lower commitment to liberal democracy.
+        </p>
+        <p style="font-size: 0.8125rem; color: var(--color-text-secondary); line-height: 1.75; text-align: justify;">
+          At the same time, my PhD dissertation also demonstrates that democracies are not defenseless against the consequences of polarisation. The findings indicate that political systems built on consensus and power-sharing are associated with lower levels of polarisation compared to majoritarian systems. Crucially, consensus-based institutions can act as a buffer, weakening the link between high levels of polarisation and its most destructive outcomes.
+          Ultimately, my PhD offers a nuanced perspective on political conflict. It moves beyond the narrative that polarisation is uniformly harmful to show that conflict is a normal part of politics. The question should not be how to eliminate division, but how to build robust democratic systems that can channel it productively.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEFENCE PHOTO -->
+  <section class="section">
+    <div class="container">
+      <img src="/images/defense.JPG" alt="PhD defence at Vrije Universiteit Brussel, September 2025" style="width: 100%; max-width: 800px; border-radius: 4px;" />
+      <p style="font-size: 0.75rem; color: var(--color-text-faint); margin-top: 0.5rem;">Public defence, September 15, 2025, Vrije Universiteit Brussel.</p>
     </div>
   </section>
 

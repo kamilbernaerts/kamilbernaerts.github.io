@@ -98,6 +98,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .site-name {
@@ -111,6 +112,26 @@ p {
 
 .site-name:hover {
   opacity: 1;
+}
+
+/* Hamburger menu button — hidden on desktop */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 1px;
+  transition: transform 0.2s ease;
 }
 
 .site-nav {
@@ -443,34 +464,84 @@ p {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+
+  /* Typography */
   h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.375rem; }
+
+  /* Container */
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  /* Hamburger menu */
+  .menu-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    margin-top: 1rem;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .site-nav li {
+    width: 100%;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 0.625rem 0;
+    font-size: 0.9375rem;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .site-nav li:last-child a {
+    border-bottom: none;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 2rem 0 1.5rem;
+  }
 
   .hero-layout {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .hero-photo,
   .hero-photo-placeholder {
-    width: 160px;
-    height: 200px;
+    width: 140px;
+    height: 175px;
     order: -1;
   }
 
-  .info-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .hero .intro {
+    text-align: left !important;
   }
 
+  /* Info grid */
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  /* Grids */
   .blog-grid,
   .project-grid {
     grid-template-columns: 1fr;
   }
 
-  .site-nav {
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-
+  /* Publication items */
   .pub-item {
     flex-direction: column;
     gap: 0.25rem;
@@ -480,8 +551,75 @@ p {
     text-align: left;
   }
 
+  /* Blog items */
   .blog-item {
     grid-template-columns: 1fr;
     gap: 0.5rem;
+  }
+
+  /* Page header */
+  .page-header {
+    padding: 1.5rem 0 1rem;
+  }
+
+  .page-header .lead {
+    max-width: 100%;
+  }
+
+  /* Hero section */
+  .hero {
+    padding: 2rem 0 1.5rem;
+  }
+
+  /* Footer */
+  .footer-links {
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  /*
+   * Override ALL inline grid styles on mobile.
+   * This catches the two-column layouts on Research, PhD, Teaching, Outreach pages
+   * that use inline style="display: grid; grid-template-columns: ..."
+   */
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* On mobile, images in grid layouts should size naturally */
+  [style*="grid-template-columns"] img {
+    max-width: 280px;
+  }
+
+  /* Absolute-positioned elements (like HAI logo) need adjustment */
+  [style*="position: absolute"][style*="right: 2rem"] {
+    position: static !important;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+
+  h1 { font-size: 1.5rem; }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pill {
+    font-size: 0.6875rem;
+    padding: 0.375rem 0.75rem;
+  }
+
+  .hero-photo,
+  .hero-photo-placeholder {
+    width: 120px;
+    height: 150px;
   }
 }

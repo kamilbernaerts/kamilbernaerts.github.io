@@ -296,6 +296,11 @@ p {
   display: inline-block;
 }
 
+.section > .container > img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ===== PUBLICATION LIST ===== */
 .pub-item {
   padding: 1rem 0;

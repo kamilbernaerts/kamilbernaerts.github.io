@@ -11,22 +11,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- CURRENT -->
+  <!-- CURRENT + PHOTO -->
   <section class="section">
     <div class="container">
-      <p class="section__label">Current teaching (2025–2026)</p>
-      
-      <div class="pub-item">
+      <div style="display: grid; grid-template-columns: 1fr 240px; gap: 2.5rem; align-items: start;">
         <div>
-          <p class="pub-title">Introduction to Political Science and Governance</p>
-          <p class="pub-authors">Guest professor · Universiteit Hasselt · Bachelor 1 Social Sciences</p>
+          <p class="section__label">Current teaching (2025–2026)</p>
+          <div class="pub-item">
+            <div>
+              <p class="pub-title">Introduction to Political Science and Governance</p>
+              <p class="pub-authors">Guest professor · Universiteit Hasselt · Bachelor 1 Social Sciences</p>
+            </div>
+          </div>
+          <div class="pub-item">
+            <div>
+              <p class="pub-title">Bachelor thesis workshop: polarisation and democracy</p>
+              <p class="pub-authors">Supervision of 3 theses · VUB Bachelor Political Science</p>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="pub-item">
         <div>
-          <p class="pub-title">Bachelor thesis workshop: polarisation and democracy</p>
-          <p class="pub-authors">Supervision of 3 theses · VUB Bachelor Political Science</p>
+          <img src="/images/teaching.jpeg" alt="Lecture at Universiteit Hasselt" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;" />
         </div>
       </div>
     </div>
@@ -36,7 +41,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section">
     <div class="container">
       <p class="section__label">Previous teaching experience</p>
-      
       <div class="pub-item">
         <div>
           <p class="pub-title">Bachelor thesis workshop: polarisation and democracy</p>
@@ -44,7 +48,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="pub-meta"><p class="pub-year">2022–2025</p></div>
       </div>
-
       <div class="pub-item">
         <div>
           <p class="pub-title">Guest lecture: exploring quantitative research methods</p>
@@ -52,7 +55,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="pub-meta"><p class="pub-year">2023–2024</p></div>
       </div>
-
       <div class="pub-item">
         <div>
           <p class="pub-title">Guest lecture: polarisation and democracy</p>

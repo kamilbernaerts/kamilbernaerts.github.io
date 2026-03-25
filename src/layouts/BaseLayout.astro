@@ -4,11 +4,9 @@ interface Props {
   description?: string;
   lang?: string;
 }
-
 const { title, description = "Political scientist studying polarisation, democracy, and democratic resilience.", lang = "en" } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
-
 <!DOCTYPE html>
 <html lang={lang}>
 <head>
@@ -26,12 +24,7 @@ const currentPath = Astro.url.pathname;
   <header class="site-header">
     <div class="container">
       <a href="/" class="site-name">Dr. Kamil Bernaerts</a>
-      <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.site-nav').classList.toggle('open')">
-        <span class="menu-bar"></span>
-        <span class="menu-bar"></span>
-        <span class="menu-bar"></span>
-      </button>
-      <nav>
+      <nav class="desktop-nav">
         <ul class="site-nav">
           <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
           <li><a href="/research/" class={currentPath.startsWith('/research') ? 'active' : ''}>Research</a></li>
@@ -42,8 +35,28 @@ const currentPath = Astro.url.pathname;
           <li><a href="/contact/" class={currentPath.startsWith('/contact') ? 'active' : ''}>Contact</a></li>
         </ul>
       </nav>
+      <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
+      <a href="/research/" class={currentPath.startsWith('/research') ? 'active' : ''}>Research</a>
+      <a href="/phd/" class={currentPath.startsWith('/phd') ? 'active' : ''}>PhD</a>
+      <a href="/teaching/" class={currentPath.startsWith('/teaching') ? 'active' : ''}>Teaching</a>
+      <a href="/outreach/" class={currentPath.startsWith('/outreach') ? 'active' : ''}>Outreach</a>
+      <a href="/cv/" class={currentPath.startsWith('/cv') ? 'active' : ''}>CV</a>
+      <a href="/contact/" class={currentPath.startsWith('/contact') ? 'active' : ''}>Contact</a>
+    </nav>
+    <div class="mobile-menu__footer">
+      <a href="mailto:kamil.bernaerts@vub.be">kamil.bernaerts@vub.be</a>
+    </div>
+  </div>
 
   <main>
     <slot />
@@ -61,9 +74,17 @@ const currentPath = Astro.url.pathname;
       <p class="footer-copy">&copy; {new Date().getFullYear()} Kamil Bernaerts. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('mobileMenu');
+    toggle?.addEventListener('click', () => {
+      menu?.classList.toggle('open');
+      toggle.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
-
 <style is:global>
   @import '../styles/global.css';
 </style>

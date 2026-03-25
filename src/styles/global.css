@@ -117,7 +117,6 @@ p {
   opacity: 1;
 }
 
-/* Desktop nav */
 .site-nav {
   display: flex;
   gap: 1.375rem;
@@ -142,7 +141,6 @@ p {
   font-weight: 500;
 }
 
-/* Hamburger — hidden on desktop */
 .menu-toggle {
   display: none;
   background: none;
@@ -160,7 +158,7 @@ p {
   height: 2px;
   background: var(--color-text);
   border-radius: 1px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .menu-toggle.open .menu-bar:first-child {
@@ -171,7 +169,6 @@ p {
   transform: translateY(-4px) rotate(-45deg);
 }
 
-/* Mobile menu overlay — hidden by default */
 .mobile-menu {
   display: none;
 }
@@ -482,13 +479,20 @@ p {
 
 
 /* ==========================================================================
-   MOBILE — 768px and below
+   MOBILE (max-width: 768px)
+   
+   Design philosophy: mobile is not a degraded desktop.
+   - Single column reading flow with generous whitespace
+   - Images: centered + compact (identity), or full-width (documentary), never floated
+   - Editorial feel preserved through serif headings and spacing rhythm
+   - All inline grids become single-column via one universal rule
    ========================================================================== */
 @media (max-width: 768px) {
 
-  /* --- Typography: keep editorial feel --- */
+  /* --- Typography --- */
   h1 { font-size: 1.75rem; }
   h2 { font-size: 1.375rem; }
+  h3 { font-size: 1.125rem; }
 
   .container {
     padding: 0 1.25rem;
@@ -556,42 +560,27 @@ p {
     color: var(--color-accent);
   }
 
-  /* --- Hero: photo floats inside text like a magazine --- */
+  /* --- Hero --- */
   .hero {
     padding: 1.5rem 0 1.25rem;
   }
 
   .hero-layout {
-    display: block; /* kill the grid, go freeform */
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .hero-photo,
   .hero-photo-placeholder {
-    float: right;
-    width: 110px;
-    height: 140px;
-    margin: 0 0 0.75rem 1rem;
-    border-radius: 4px;
-  }
-
-  .hero h1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 1rem;
   }
 
-  .hero .intro {
-    text-align: left !important;
-  }
-
-  /* Clear the float after pills */
-  .pill-group {
-    clear: both;
-  }
-
-  /* --- Info grid: compact 2-col --- */
-  .info-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem 1.5rem;
-    padding: 1.25rem 0;
+  .hero h1 {
+    margin-bottom: 0.75rem;
   }
 
   /* --- Sections --- */
@@ -600,14 +589,20 @@ p {
   }
 
   .page-header {
-    padding: 1.5rem 0 0.75rem;
+    padding: 1.25rem 0 0.75rem;
   }
 
   .page-header .lead {
     max-width: 100%;
   }
 
-  /* --- Publication items --- */
+  /* --- Info grid: 2 columns on tablet, see 480px for 1-col --- */
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  /* --- Publication items: stack --- */
   .pub-item {
     flex-direction: column;
     gap: 0.125rem;
@@ -617,9 +612,12 @@ p {
     text-align: left;
   }
 
-  /* --- Cards: keep side by side but tighter --- */
+  .pub-title {
+    font-size: 0.875rem;
+  }
+
+  /* --- Project cards: keep 2-col but compact --- */
   .project-grid {
-    grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
   }
 
@@ -629,8 +627,10 @@ p {
 
   .project-card__desc {
     font-size: 0.75rem;
+    line-height: 1.45;
   }
 
+  /* --- Blog --- */
   .blog-grid {
     grid-template-columns: 1fr;
   }
@@ -642,54 +642,81 @@ p {
 
   /* --- Footer --- */
   .footer-links {
-    gap: 0.75rem 1.5rem;
+    gap: 0.5rem 1.25rem;
+  }
+
+  /* --- Pills --- */
+  .pill {
+    font-size: 0.6875rem;
+    padding: 0.375rem 0.75rem;
   }
 
   /*
-   * INLINE GRID LAYOUTS
-   * Instead of collapsing all to 1 column, we use different strategies:
-   *
-   * Two-column layouts with images (PhD cover, teaching photo, etc.)
-   * keep the image but make it smaller and floated within the flow.
+   * THE UNIVERSAL GRID RULE
+   * All inline style grids (used on Research, PhD, Teaching, Outreach pages)
+   * collapse to single column. Images get centered and constrained.
    */
-  [style*="grid-template-columns: 1fr 280px"],
-  [style*="grid-template-columns: 1fr 240px"] {
+  [style*="display: grid"] {
     display: block !important;
   }
 
-  /* Images in these blocks: float right, magazine-style */
-  [style*="grid-template-columns: 1fr 280px"] > div:last-child,
-  [style*="grid-template-columns: 1fr 240px"] > div:last-child {
-    float: right;
-    width: 130px;
-    margin: 0 0 1rem 1.25rem;
-  }
+  /*
+   * IMAGE STRATEGY:
+   * - Book covers / profile-style images: centered, max 160px
+   * - Documentary photos (defence, teaching, speaking): full-width
+   * - Logos: inline, small
+   */
 
-  [style*="grid-template-columns: 1fr 280px"] > div:last-child img,
-  [style*="grid-template-columns: 1fr 240px"] > div:last-child img {
-    width: 100%;
-  }
-
-  /* Research page: buttons next to intro → stack below */
-  [style*="grid-template-columns: 1fr 240px"] > div:last-child a {
+  /* Book cover (identified by alt text containing "cover") */
+  img[alt*="cover" i],
+  img[alt*="Cover" i] {
+    max-width: 160px;
+    margin: 0 auto 1.25rem;
     display: block;
   }
 
-  /* Defence/teaching photo layouts: full-width image */
-  [style*="grid-template-columns: 1fr 320px"] {
-    display: block !important;
-  }
-
-  [style*="grid-template-columns: 1fr 320px"] > div:last-child {
-    margin-top: 1.5rem;
-  }
-
-  [style*="grid-template-columns: 1fr 320px"] > div:last-child img {
+  /* Defence and event photos: full-width with no border-radius */
+  img[alt*="defence" i],
+  img[alt*="defense" i],
+  img[alt*="public lecture" i],
+  img[alt*="Lecture" i] {
     width: 100%;
-    border-radius: 4px;
+    max-width: 100%;
+    border-radius: 0 !important;
+    margin: 1rem 0;
   }
 
-  /* Absolute-positioned elements (HAI logo) */
+  /* Logos: keep small and left-aligned */
+  img[alt*="logo" i] {
+    max-width: 120px;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Teaching photo: constrained */
+  img[alt*="Lecture at" i] {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 4px;
+    margin: 0.75rem 0;
+  }
+
+  /* Caption text below images in collapsed grids */
+  [style*="display: grid"] > div > p:last-child {
+    text-align: center;
+  }
+
+  /* Reset max-width constraints on mobile */
+  [style*="max-width: 720px"],
+  [style*="max-width: 680px"] {
+    max-width: 100% !important;
+  }
+
+  /* Bordered cards (outreach): less padding */
+  [style*="padding: 2rem"] {
+    padding: 1.25rem !important;
+  }
+
+  /* Absolute-positioned elements (HAI logo): go static */
   [style*="position: absolute"] {
     position: static !important;
     top: auto !important;
@@ -697,82 +724,52 @@ p {
     margin-bottom: 0.75rem;
   }
 
-  /* Bordered cards: less padding on mobile */
-  [style*="padding: 2rem"] {
-    padding: 1.25rem !important;
+  /* Box-shadow: remove on mobile for cleaner look */
+  [style*="box-shadow"] {
+    box-shadow: none !important;
   }
 
-  /* Abstract border accent */
-  [style*="border-left: 3px"] {
-    padding-left: 1rem !important;
-  }
-
-  /* Max-width constraints: let content breathe on mobile */
-  [style*="max-width: 720px"],
-  [style*="max-width: 680px"] {
-    max-width: 100% !important;
-  }
-
-  /* Full-bleed images (defence, public speaking): break out of container */
-  .section > .container > img {
-    width: calc(100% + 2.5rem);
-    max-width: none;
-    margin-left: -1.25rem;
-    border-radius: 0;
-  }
-
-  /* Pills: slightly smaller */
-  .pill {
-    font-size: 0.6875rem;
-    padding: 0.375rem 0.75rem;
+  /* Justify text: disable on mobile for better readability */
+  [style*="text-align: justify"] {
+    text-align: left !important;
   }
 }
 
 
 /* ==========================================================================
-   SMALL PHONES — 480px and below
+   SMALL PHONES (max-width: 480px)
    ========================================================================== */
 @media (max-width: 480px) {
 
   h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
 
   .container {
     padding: 0 1rem;
   }
 
-  /* Info grid: single column on very small screens */
   .info-grid {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
 
-  /* Project cards: stack on very small screens */
   .project-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Hero photo: smaller */
   .hero-photo,
   .hero-photo-placeholder {
-    width: 90px;
-    height: 115px;
+    width: 80px;
+    height: 80px;
   }
 
-  /* Floated images in grids: smaller */
-  [style*="grid-template-columns: 1fr 280px"] > div:last-child,
-  [style*="grid-template-columns: 1fr 240px"] > div:last-child {
-    width: 110px;
-    margin: 0 0 0.75rem 1rem;
+  img[alt*="cover" i],
+  img[alt*="Cover" i] {
+    max-width: 130px;
   }
 
   .mobile-menu nav a {
     font-size: 1.25rem;
     padding: 0.625rem 0;
-  }
-
-  /* Full-bleed images: adjust for smaller padding */
-  .section > .container > img {
-    width: calc(100% + 2rem);
-    margin-left: -1rem;
   }
 }

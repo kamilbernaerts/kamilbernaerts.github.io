@@ -14,9 +14,9 @@ const currentPath = Astro.url.pathname;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} — Dr. Kamil Bernaerts</title>
+  <title>{title} — Kamil Bernaerts</title>
   <meta name="description" content={description} />
-  <meta property="og:title" content={`${title} — Dr. Kamil Bernaerts`} />
+  <meta property="og:title" content={`${title} — Kamil Bernaerts`} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <link rel="canonical" href={`https://kamilbernaerts.com${currentPath}`} />
@@ -25,16 +25,23 @@ const currentPath = Astro.url.pathname;
 <body>
   <header class="site-header">
     <div class="container">
-      <a href="/" class="site-name">Dr. Kamil Bernaerts</a>
+      <a href="/" class="site-name">Kamil Bernaerts</a>
+      <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.site-nav').classList.toggle('open')">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
       <nav>
         <ul class="site-nav">
           <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
           <li><a href="/research/" class={currentPath.startsWith('/research') ? 'active' : ''}>Research</a></li>
           <li><a href="/phd/" class={currentPath.startsWith('/phd') ? 'active' : ''}>PhD</a></li>
+          <li><a href="/writing/" class={currentPath.startsWith('/writing') ? 'active' : ''}>Writing</a></li>
           <li><a href="/teaching/" class={currentPath.startsWith('/teaching') ? 'active' : ''}>Teaching</a></li>
           <li><a href="/outreach/" class={currentPath.startsWith('/outreach') ? 'active' : ''}>Outreach</a></li>
           <li><a href="/cv/" class={currentPath.startsWith('/cv') ? 'active' : ''}>CV</a></li>
           <li><a href="/contact/" class={currentPath.startsWith('/contact') ? 'active' : ''}>Contact</a></li>
+          <li><a href="/nl/" class="lang-switch">NL / EN</a></li>
         </ul>
       </nav>
     </div>
@@ -49,9 +56,9 @@ const currentPath = Astro.url.pathname;
       <div class="footer-links">
         <a href="https://scholar.google.com/citations?user=7Pmo70UAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
         <a href="https://researchportal.vub.be/en/persons/kamil-bernaerts" target="_blank" rel="noopener">VUB Research Portal</a>
-        <a href="https://orcid.org/0000-0002-3380-6639" target="_blank" rel="noopener">ORCID</a>
         <a href="https://kamilbernaerts.bsky.social" target="_blank" rel="noopener">Bluesky</a>
         <a href="https://be.linkedin.com/in/kamil-bernaerts-431753201" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:kamil.bernaerts@vub.be">kamil.bernaerts@vub.be</a>
       </div>
       <p class="footer-copy">&copy; {new Date().getFullYear()} Kamil Bernaerts. All rights reserved.</p>
     </div>

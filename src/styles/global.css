@@ -675,7 +675,7 @@ p {
   /* Book covers: centered, compact */
   img[alt*="cover" i],
   img[alt*="Cover" i] {
-    max-width: 160px;
+    max-width: 220px;
     margin: 0 auto 1rem;
     display: block;
   }
@@ -726,6 +726,11 @@ p {
     margin-bottom: 0;
   }
 
+  [style*="display: grid"] > div > img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   /* Absolute elements (HAI logo): go static */
   [style*="position: absolute"] {
     position: static !important;
@@ -767,7 +772,7 @@ p {
 
   img[alt*="cover" i],
   img[alt*="Cover" i] {
-    max-width: 130px;
+    max-width: 180px;
   }
 
   img[alt*="defence" i],

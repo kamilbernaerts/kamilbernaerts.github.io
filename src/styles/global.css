@@ -459,6 +459,7 @@ p {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-links a {
@@ -470,6 +471,7 @@ p {
   font-size: 0.75rem;
   color: var(--color-text-faint);
   margin-top: 1rem;
+  text-align: center;
 }
 
 /* ===== PAGE HEADER ===== */

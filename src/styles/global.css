@@ -344,6 +344,42 @@ p {
   color: var(--color-text-faint);
 }
 
+/* ===== OPEN ACCESS BADGES ===== */
+.oa-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.5625rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  font-style: normal;
+  padding: 0.125rem 0.4rem;
+  border-radius: 3px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  margin-left: 0.35rem;
+  line-height: 1.6;
+  cursor: default;
+}
+
+.oa-gold {
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FCD34D;
+}
+
+.oa-diamond {
+  background: #EFF6FF;
+  color: #1E40AF;
+  border: 1px solid #BFDBFE;
+}
+
+.oa-green {
+  background: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #6EE7B7;
+}
+
 /* ===== BLOG CARDS ===== */
 .blog-grid {
   display: grid;

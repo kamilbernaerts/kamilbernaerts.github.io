@@ -150,6 +150,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <p class="section__label">Published &amp; accepted articles and books</p>
 
+      <!-- PSR: accepted, no link yet -->
       <div class="pub-item">
         <div>
           <p class="pub-title">Affect or emotions? Disaggregating affective polarisation to explain support for liberal democracy in Belgium and the United Kingdom</p>
@@ -161,6 +162,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
+      <!-- PLC Summary: diamond OA, one link -->
       <div class="pub-item">
         <div>
           <p class="pub-title">Summary: Friends or foes, does polarisation really undermine democracy? Understanding the two-way relationship between polarisation dynamics and the processes and institutions of democratic contestation</p>
@@ -168,10 +170,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="pub-meta">
           <p class="pub-journal">Politics of the Low Countries <span class="oa-badge oa-diamond" title="Diamond Open Access — freely available to read and download">Diamond OA</span></p>
-          <p class="pub-year">2026 (<a href="https://plc-journal.eu/article/view/25310" target="_blank" rel="noopener">published</a>)</p>
+          <p class="pub-year">2026</p>
+          <div class="pub-links">
+            <a href="https://plc-journal.eu/article/view/25310" target="_blank" rel="noopener" class="pub-link">published ↗</a>
+          </div>
         </div>
       </div>
 
+      <!-- VUBPRESS book: no link, no OA classification -->
       <div class="pub-item">
         <div>
           <p class="pub-title">Friends or foes: does polarisation really undermine democracy? Understanding the two-way relationship between polarisation dynamics and the processes and institutions of democratic contestation</p>
@@ -183,6 +189,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
+      <!-- IPSR: green OA, published + AAM -->
       <div class="pub-item">
         <div>
           <p class="pub-title">Fight or unite? Exploring the link between consensus institutions, polarization and political violence in 113 democracies over time (1900–2023)</p>
@@ -190,10 +197,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="pub-meta">
           <p class="pub-journal">International Political Science Review <span class="oa-badge oa-green" title="Green Open Access — accepted author manuscript available">Green OA</span></p>
-          <p class="pub-year">2025 (<a href="https://journals.sagepub.com/doi/10.1177/01925121251355894" target="_blank" rel="noopener">published</a> · <a href="https://researchportal.vub.be/en/publications/fight-or-unite-exploring-the-link-between-consensus-institutions-/" target="_blank" rel="noopener">AAM</a>)</p>
+          <p class="pub-year">2025</p>
+          <div class="pub-links">
+            <a href="https://journals.sagepub.com/doi/10.1177/01925121251355894" target="_blank" rel="noopener" class="pub-link">published ↗</a>
+            <a href="https://researchportal.vub.be/en/publications/fight-or-unite-exploring-the-link-between-consensus-institutions-/" target="_blank" rel="noopener" class="pub-link">AAM ↗</a>
+          </div>
         </div>
       </div>
 
+      <!-- Democratization: gold OA, one link -->
       <div class="pub-item">
         <div>
           <p class="pub-title">Institutional design and polarization. Do consensus democracies fare better in fighting polarization than majoritarian democracies?</p>
@@ -201,10 +213,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="pub-meta">
           <p class="pub-journal">Democratization <span class="oa-badge oa-gold" title="Gold Open Access — freely available via publisher">Gold OA</span></p>
-          <p class="pub-year">2023 (<a href="https://www.tandfonline.com/doi/full/10.1080/13510347.2022.2117300" target="_blank" rel="noopener">published</a>)</p>
+          <p class="pub-year">2023</p>
+          <div class="pub-links">
+            <a href="https://www.tandfonline.com/doi/full/10.1080/13510347.2022.2117300" target="_blank" rel="noopener" class="pub-link">published ↗</a>
+          </div>
         </div>
       </div>
 
+      <!-- Frontiers: gold OA, one link -->
       <div class="pub-item">
         <div>
           <p class="pub-title">Deliberation and polarization: a multi-disciplinary review</p>
@@ -212,7 +228,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="pub-meta">
           <p class="pub-journal">Frontiers in Political Science <span class="oa-badge oa-gold" title="Gold Open Access — freely available via publisher">Gold OA</span></p>
-          <p class="pub-year">2023 (<a href="https://www.frontiersin.org/journals/political-science/articles/10.3389/fpos.2023.1127372/" target="_blank" rel="noopener">published</a>)</p>
+          <p class="pub-year">2023</p>
+          <div class="pub-links">
+            <a href="https://www.frontiersin.org/journals/political-science/articles/10.3389/fpos.2023.1127372/" target="_blank" rel="noopener" class="pub-link">published ↗</a>
+          </div>
         </div>
       </div>
     </div>
@@ -223,6 +242,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <p class="section__label">Under review &amp; working papers</p>
 
+      <!-- Politics: no link -->
       <div class="pub-item">
         <div>
           <p class="pub-title">Hate, not dislike? Understanding anti-democratic attitudes through a multi-dimensional understanding of affective polarisation</p>
@@ -234,6 +254,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
+      <!-- Acta Politica: preprint link -->
       <div class="pub-item">
         <div>
           <p class="pub-title">Polarising alone? The relationship between social contact and affective polarisation in Belgium and the UK</p>
@@ -241,10 +262,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="pub-meta">
           <p class="pub-journal">Acta Politica</p>
-          <p class="pub-year"><a href="https://www.researchsquare.com/article/rs-9031632/v1" target="_blank" rel="noopener">Preprint</a></p>
+          <div class="pub-links">
+            <a href="https://www.researchsquare.com/article/rs-9031632/v1" target="_blank" rel="noopener" class="pub-link">preprint ↗</a>
+          </div>
         </div>
       </div>
 
+      <!-- Working paper: no link -->
       <div class="pub-item">
         <div>
           <p class="pub-title">Beyond the culture wars? Assessing the socio-economic determinants of affective polarization</p>

@@ -13,11 +13,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="info-grid" style="border-top: none; padding-top: 0;">
           <div>
             <p class="info-grid__label">Email</p>
-            <p class="info-grid__value">
-              <a href="mailto:kamil.bernaerts@vub.be" class="email-badge" title="kamil.bernaerts@vub.be">✉ VUB</a>
-              <a href="mailto:kamil.bernaerts@uhasselt.be" class="email-badge" title="kamil.bernaerts@uhasselt.be">✉ UHasselt</a>
-              <a href="mailto:kamil.bernaerts@hannah-arendt.institute" class="email-badge" title="kamil.bernaerts@hannah-arendt.institute">✉ HAI</a>
-            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.25rem;">
+              <a href="mailto:kamil.bernaerts@vub.be" class="email-badge" title="kamil.bernaerts@vub.be">
+                <span class="email-badge__icon">✉</span> VUB
+              </a>
+              <a href="mailto:kamil.bernaerts@uhasselt.be" class="email-badge" title="kamil.bernaerts@uhasselt.be">
+                <span class="email-badge__icon">✉</span> UHasselt
+              </a>
+              <a href="mailto:kamil.bernaerts@hannah-arendt.institute" class="email-badge" title="kamil.bernaerts@hannah-arendt.institute">
+                <span class="email-badge__icon">✉</span> HAI
+              </a>
+            </div>
           </div>
           <div>
             <p class="info-grid__label">Office</p>
@@ -60,21 +66,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .email-badge {
     display: inline-flex;
     align-items: center;
-    font-size: 0.75rem;
+    gap: 0.4rem;
+    font-size: 0.8125rem;
     font-family: var(--font-sans);
     font-weight: 500;
-    padding: 0.2rem 0.5rem;
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    color: var(--color-text-secondary);
+    padding: 0.45rem 0.875rem;
+    background-color: var(--color-accent-light);
+    border: 1px solid #e8c99a;
+    border-radius: 6px;
+    color: var(--color-accent);
     text-decoration: none;
-    margin-right: 0.3rem;
-    transition: border-color 0.15s ease, color 0.15s ease;
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
   }
 
   .email-badge:hover {
+    background-color: #f0dfc0;
     border-color: var(--color-accent);
-    color: var(--color-accent);
+    transform: translateY(-1px);
     opacity: 1;
+  }
+
+  .email-badge__icon {
+    font-size: 0.875rem;
+    opacity: 0.8;
   }
 </style>

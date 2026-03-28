@@ -344,6 +344,37 @@ p {
   color: var(--color-text-faint);
 }
 
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: 0.4rem;
+  justify-content: flex-end;
+}
+
+.pub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  font-style: normal;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-accent);
+  text-decoration: none;
+  line-height: 1.6;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.pub-link:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-light);
+  opacity: 1;
+}
+
 /* ===== OPEN ACCESS BADGES ===== */
 .oa-badge {
   display: inline-flex;
@@ -669,6 +700,10 @@ p {
     text-align: left;
   }
 
+  .pub-links {
+    justify-content: flex-start;
+  }
+
   .pub-title {
     font-size: 0.875rem;
   }
@@ -793,10 +828,7 @@ p {
     box-shadow: none !important;
   }
 
-  /* Disable justify on mobile */
-  [style*="text-align: justify"] {
-    text-align: left !important;
-  }
+
 }
 
 

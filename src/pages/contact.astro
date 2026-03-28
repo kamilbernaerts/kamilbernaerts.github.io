@@ -13,20 +13,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="info-grid" style="border-top: none; padding-top: 0;">
           <div>
             <p class="info-grid__label">Email</p>
-            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.25rem;">
-              <a href="mailto:kamil.bernaerts@vub.be" class="email-btn">
-                <span class="email-btn__org">VUB</span>
-                <span class="email-btn__address">kamil.bernaerts@vub.be</span>
-              </a>
-              <a href="mailto:kamil.bernaerts@uhasselt.be" class="email-btn">
-                <span class="email-btn__org">UHasselt</span>
-                <span class="email-btn__address">kamil.bernaerts@uhasselt.be</span>
-              </a>
-              <a href="mailto:kamil.bernaerts@hannah-arendt.institute" class="email-btn">
-                <span class="email-btn__org">Hannah Arendt Instituut</span>
-                <span class="email-btn__address">kamil.bernaerts@hannah-arendt.institute</span>
-              </a>
-            </div>
+            <p class="info-grid__value">
+              <a href="mailto:kamil.bernaerts@vub.be" class="email-badge" title="kamil.bernaerts@vub.be">✉ VUB</a>
+              <a href="mailto:kamil.bernaerts@uhasselt.be" class="email-badge" title="kamil.bernaerts@uhasselt.be">✉ UHasselt</a>
+              <a href="mailto:kamil.bernaerts@hannah-arendt.institute" class="email-badge" title="kamil.bernaerts@hannah-arendt.institute">✉ HAI</a>
+            </p>
           </div>
           <div>
             <p class="info-grid__label">Office</p>
@@ -66,53 +57,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  .email-btn {
-    display: flex;
+  .email-badge {
+    display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.625rem 0.875rem;
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    text-decoration: none;
-    transition: border-color 0.15s ease, background-color 0.15s ease;
-    max-width: 400px;
-  }
-
-  .email-btn:hover {
-    border-color: var(--color-accent);
-    background-color: var(--color-accent-light);
-    opacity: 1;
-  }
-
-  .email-btn__org {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--color-accent);
-    white-space: nowrap;
-    flex-shrink: 0;
-    min-width: 5rem;
-  }
-
-  .email-btn__address {
-    font-size: 0.8125rem;
-    color: var(--color-text-secondary);
+    font-size: 0.75rem;
     font-family: var(--font-sans);
+    font-weight: 500;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    margin-right: 0.3rem;
+    transition: border-color 0.15s ease, color 0.15s ease;
   }
 
-  .email-btn:hover .email-btn__address {
-    color: var(--color-text);
-  }
-
-  @media (max-width: 480px) {
-    .email-btn {
-      max-width: 100%;
-    }
-
-    .email-btn__address {
-      font-size: 0.75rem;
-      word-break: break-all;
-    }
+  .email-badge:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    opacity: 1;
   }
 </style>

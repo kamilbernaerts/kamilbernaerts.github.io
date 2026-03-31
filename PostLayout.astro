@@ -1,0 +1,152 @@
+---
+// src/layouts/PostLayout.astro
+const { title, description, date, lang, venue, venueUrl, authors, tags, image } = Astro.props.frontmatter ?? Astro.props;
+
+import BaseLayout from './BaseLayout.astro';
+---
+
+<BaseLayout title={title} description={description} image={image}>
+
+  <div class="page-header">
+    <div class="container--narrow">
+      <p style="font-size: 0.75rem; margin-bottom: 0.75rem;">
+        <a href="/writing/" style="color: var(--color-text-muted);">← Writing</a>
+      </p>
+
+      <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; font-size: 0.75rem; color: var(--color-text-faint); margin-bottom: 1rem;">
+        <span>{date}</span>
+        {venue && venueUrl && (
+          <>
+            <span>·</span>
+            <a href={venueUrl} target="_blank" rel="noopener" style="color: var(--color-accent); font-weight: 500;">{venue}</a>
+          </>
+        )}
+        {venue && !venueUrl && (
+          <>
+            <span>·</span>
+            <span style="color: var(--color-accent); font-weight: 500;">{venue}</span>
+          </>
+        )}
+        {lang && (
+          <>
+            <span>·</span>
+            <span style="padding: 0.125rem 0.5rem; border: 1px solid var(--color-border); border-radius: 10px; color: var(--color-text-muted);">{lang}</span>
+          </>
+        )}
+      </div>
+
+      <h1>{title}</h1>
+
+      {authors && (
+        <p style="font-size: 0.8125rem; color: var(--color-text-muted); margin-top: 0.5rem; margin-bottom: 0;">{authors}</p>
+      )}
+    </div>
+  </div>
+
+  {venue && (
+    <div class="container--narrow" style="margin-bottom: 1.5rem;">
+      <div style="background: var(--color-accent-light); border: 1px solid var(--color-border); border-radius: 6px; padding: 0.875rem 1.125rem; font-size: 0.8125rem; color: var(--color-text-secondary);">
+        Dit artikel verscheen oorspronkelijk op
+        {venueUrl
+          ? <a href={venueUrl} target="_blank" rel="noopener">{venue}</a>
+          : <strong>{venue}</strong>
+        }
+        {' '}({date}).
+      </div>
+    </div>
+  )}
+
+  <div class="container--narrow post-body">
+    <slot />
+  </div>
+
+  <div class="container--narrow" style="padding-top: 2rem; padding-bottom: 3rem; border-top: 1px solid var(--color-border); margin-top: 2rem;">
+    {tags && tags.length > 0 && (
+      <div class="pill-group" style="margin-bottom: 1.5rem;">
+        {tags.map(tag => (
+          <span class="pill">{tag}</span>
+        ))}
+      </div>
+    )}
+    <p style="font-size: 0.8125rem; color: var(--color-text-muted);">
+      <a href="/writing/">← Back to Writing</a>
+    </p>
+  </div>
+
+</BaseLayout>
+
+<style is:global>
+  .post-body h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-body h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .post-body p {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    text-align: justify;
+  }
+
+  .post-body strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .post-body a {
+    color: var(--color-accent);
+  }
+
+  .post-body blockquote {
+    border-left: 3px solid var(--color-accent);
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.0625rem;
+    color: var(--color-text);
+    line-height: 1.65;
+  }
+
+  .post-body blockquote p {
+    margin-bottom: 0;
+    color: var(--color-text);
+    text-align: left;
+  }
+
+  .post-body figure {
+    margin: 1.75rem 0;
+  }
+
+  .post-body figure img {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+  }
+
+  .post-body figcaption {
+    font-size: 0.75rem;
+    color: var(--color-text-faint);
+    margin-top: 0.375rem;
+    font-style: italic;
+  }
+
+  .post-body .fig-label {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-text-faint);
+    margin-bottom: 0.25rem;
+  }
+
+  .post-body .source-note {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+</style>

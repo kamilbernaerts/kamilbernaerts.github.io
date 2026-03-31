@@ -5,7 +5,7 @@ description: "Het V-Dem-rapport van 2025 toont aan dat de democratie is teruggev
 date: "26 maart 2026"
 lang: "NL"
 tags: ["Democratie", "Autocratisering", "V-Dem", "Verenigde Staten", "Liberale democratie"]
-image: "/images/vdem-1.png"
+image: "/images/vdem-1-og.jpg"
 ---
 
 De democratische erosie die zich voor onze ogen ontvouwt in de Verenigde Staten onder president Trump is dramatisch in zowel stijl als omvang — maar het is helaas geen uniek geval. Als politicologen zijn we ondertussen grotendeels overtuigd dat de democratie wereldwijd in de verdrukking komt. We bevinden ons, kortom, midden in een [derde golf van autocratisering](https://www.tandfonline.com/doi/full/10.1080/13510347.2019.1582029). Om te meten hoe wijdverspreid en steil deze golf is, vertrouwen de meeste onderzoekers op de breed vertrouwde V-Dem-dataset. [V-Dem](https://www.v-dem.net) is een onderzoekscentrum verbonden aan de Universiteit van Göteborg in Zweden, dat macro-niveau data verzamelt via expertbevragingen over een uitgebreide batterij van democratie-gerelateerde indicatoren. Op 17 maart publiceerden ze hun [jaarlijks rapport over de wereldwijde staat van de democratie](https://www.v-dem.net/news/press-release-democratic-backsliding-reaches-western-democracies-with-us-decline-unprecedented/) samen met de 2025-update van hun publiek beschikbare dataset. De bevindingen zijn, zonder overdrijving, dramatisch. De derde golf van autocratisering zwakt nog niet af — integendeel. De mondiale staat van de democratie is teruggevallen naar het niveau van 1978 terwijl een ongekend aantal landen autocratiseert. De golf, ondertussen uitgegroeid tot een tsnunami, heeft elke regio van de wereld bereikt. Het voortbestaan van de wereldwijde democratie is ernstig in gevaar. 

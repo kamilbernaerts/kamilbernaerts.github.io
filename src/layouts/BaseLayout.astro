@@ -3,9 +3,16 @@ interface Props {
   title: string;
   description?: string;
   lang?: string;
+  image?: string;
 }
-const { title, description = "Political scientist studying polarisation, democracy, and democratic resilience.", lang = "en" } = Astro.props;
+const {
+  title,
+  description = "Political scientist studying polarisation, democracy, and democratic resilience.",
+  lang = "en",
+  image = "/images/kamil-bernaerts.jpg",
+} = Astro.props;
 const currentPath = Astro.url.pathname;
+const ogImage = `https://kamilbernaerts.com${image}`;
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -16,6 +23,9 @@ const currentPath = Astro.url.pathname;
   <meta property="og:title" content={`${title} — Kamil Bernaerts`} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content={ogImage} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content={ogImage} />
   <link rel="canonical" href={`https://kamilbernaerts.com${currentPath}`} />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />

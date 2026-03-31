@@ -3,14 +3,12 @@
 // Gedeelde lay-out voor alle blog posts.
 // Gebruik dit via de 'layout' frontmatter in je .md bestanden.
 
-// Astro stuurt frontmatter van .md bestanden door via Astro.props.frontmatter.
-// We lezen altijd uit frontmatter (werkt voor zowel .md als .astro bestanden).
-const { title, description, date, lang, venue, venueUrl, authors, tags } = Astro.props.frontmatter ?? Astro.props;
+const { title, description, date, lang, venue, venueUrl, authors, tags, image } = Astro.props.frontmatter ?? Astro.props;
 
 import BaseLayout from './BaseLayout.astro';
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} image={image}>
 
   <!-- PAGE HEADER -->
   <div class="page-header">
@@ -86,9 +84,6 @@ import BaseLayout from './BaseLayout.astro';
 </BaseLayout>
 
 <style is:global>
-  /* ─── Post body typography ─── */
-  /* Lichte uitbreidingen van de globale stijl, enkel voor post-inhoud */
-
   .post-body h2 {
     margin-top: 2rem;
     margin-bottom: 0.5rem;
@@ -115,7 +110,6 @@ import BaseLayout from './BaseLayout.astro';
     color: var(--color-accent);
   }
 
-  /* Blockquote */
   .post-body blockquote {
     border-left: 3px solid var(--color-accent);
     padding-left: 1.25rem;
@@ -133,7 +127,6 @@ import BaseLayout from './BaseLayout.astro';
     text-align: left;
   }
 
-  /* Figuren / afbeeldingen */
   .post-body figure {
     margin: 1.75rem 0;
   }
@@ -151,7 +144,6 @@ import BaseLayout from './BaseLayout.astro';
     font-style: italic;
   }
 
-  /* Figure label (bv. "Figuur 1") */
   .post-body .fig-label {
     font-size: 0.6875rem;
     text-transform: uppercase;
@@ -160,7 +152,6 @@ import BaseLayout from './BaseLayout.astro';
     margin-bottom: 0.25rem;
   }
 
-  /* Originele bron notitie */
   .post-body .source-note {
     font-size: 0.8125rem;
     color: var(--color-text-muted);

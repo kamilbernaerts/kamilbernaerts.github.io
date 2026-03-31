@@ -1,8 +1,5 @@
 ---
 // src/layouts/PostLayout.astro
-// Gedeelde lay-out voor alle blog posts.
-// Gebruik dit via de 'layout' frontmatter in je .md bestanden.
-
 const { title, description, date, lang, venue, venueUrl, authors, tags, image } = Astro.props.frontmatter ?? Astro.props;
 
 import BaseLayout from './BaseLayout.astro';
@@ -10,14 +7,12 @@ import BaseLayout from './BaseLayout.astro';
 
 <BaseLayout title={title} description={description} image={image}>
 
-  <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="container--narrow">
       <p style="font-size: 0.75rem; margin-bottom: 0.75rem;">
         <a href="/writing/" style="color: var(--color-text-muted);">← Writing</a>
       </p>
 
-      <!-- Meta: datum + venue + taal -->
       <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; font-size: 0.75rem; color: var(--color-text-faint); margin-bottom: 1rem;">
         <span>{date}</span>
         {venue && venueUrl && (
@@ -48,7 +43,6 @@ import BaseLayout from './BaseLayout.astro';
     </div>
   </div>
 
-  <!-- ORIGINELE BRON — alleen zichtbaar als 'venue' is ingesteld -->
   {venue && (
     <div class="container--narrow" style="margin-bottom: 1.5rem;">
       <div style="background: var(--color-accent-light); border: 1px solid var(--color-border); border-radius: 6px; padding: 0.875rem 1.125rem; font-size: 0.8125rem; color: var(--color-text-secondary);">
@@ -62,12 +56,10 @@ import BaseLayout from './BaseLayout.astro';
     </div>
   )}
 
-  <!-- POST BODY -->
   <div class="container--narrow post-body">
     <slot />
   </div>
 
-  <!-- TAGS + FOOTER -->
   <div class="container--narrow" style="padding-top: 2rem; padding-bottom: 3rem; border-top: 1px solid var(--color-border); margin-top: 2rem;">
     {tags && tags.length > 0 && (
       <div class="pill-group" style="margin-bottom: 1.5rem;">

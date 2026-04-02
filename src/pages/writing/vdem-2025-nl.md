@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: "De derde golf van autocratisering: een ongeziene tsunami?"
-description: "Het V-Dem-rapport van 2025 toont aan dat de democratie is teruggevallen naar het niveau van 1978, terwijl autocratisering nu ook West-Europa en Noord-Amerika bereikt. Een overzicht van de belangrijkste bevindingen — en wat ze voor ons betekenen."
+description: "Nu volgens het laatste V-Dem rapport de democratie wereldwijd onder ongekende druk staat, bespreekt dit artikel de mondiale staat van de democratie in 2025."
 date: "26 maart 2026"
 lang: "NL"
 tags: ["Democratie", "Autocratisering", "V-Dem", "Verenigde Staten", "Liberale democratie"]

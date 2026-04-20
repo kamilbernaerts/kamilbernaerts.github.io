@@ -17,32 +17,85 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- HAI -->
   <section class="section">
     <div class="container">
-      <div style="border: 1px solid var(--color-border); border-radius: 6px; padding: 2rem; position: relative;">
-        <img src="/images/hai-logo.svg" alt="Hannah Arendt Instituut logo" style="position: absolute; top: 2rem; right: 2rem; height: 50px; width: auto;" />
-        <p class="section__label" style="margin-bottom: 0.5rem;">Hannah Arendt Instituut</p>
-        <h2 style="margin-bottom: 1rem;">Senior academic fellow</h2>
-        <p style="font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.75; max-width: 720px; margin-bottom: 1rem;">
-          The <a href="https://hannah-arendt.institute/" target="_blank" rel="noopener">Hannah Arendt Institute</a> for diversity, urbanity, and citizenship started as a collaboration between VUB and UAntwerpen, but currently involves all Flemish universities as a bridging organisation between civil society, political practice and academia. It combines scientific knowledge about citizenship, urban life, and diversity with the practices and insights of policymakers, organisations, and citizens. 
-        </p>
-        <p style="font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.75; max-width: 720px; margin-bottom: 1.5rem;">
-As a member of the <a href="https://hannah-arendt.institute/samenwerken/onderzoeker/" target="_blank" rel="noopener">academic team</a>, I help organise academic and public events, bring expertise on polarisation and democratic resilience to the Institute. As the Institute connects civil society actors, it creates valuable opportunities to present my research to broader audiences through public events. It is also a place where I learn to translate academic work into accessible language — giving research meaning beyond the academy. <a href="mailto:kamil.bernaerts@hannah-arendt.institute">Contact me</a>.
-        </p>
-        <a href="https://hannah-arendt.institute/project/democratie-en-polarisatie/" target="_blank" rel="noopener" class="section__more">View my HAI profile →</a>
+      <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+        <img src="/images/hai-logo.svg" alt="Hannah Arendt Instituut logo" style="height: 48px; width: auto;" />
+        <span style="font-size: 0.85rem; color: var(--color-text-faint); letter-spacing: 0.05em; text-transform: uppercase;">Hannah Arendt Instituut</span>
       </div>
+      <h2>Senior academic fellow</h2>
+      <p>
+        The <a href="https://hannah-arendt.institute/" target="_blank" rel="noopener">Hannah Arendt Institute</a> for diversity, urbanity, and citizenship started as a collaboration between VUB and UAntwerpen, but currently involves all Flemish universities as a bridging organisation between civil society, political practice and academia. It combines scientific knowledge about citizenship, urban life, and diversity with the practices and insights of policymakers, organisations, and citizens.
+      </p>
+      <p>
+        As a member of the <a href="https://hannah-arendt.institute/samenwerken/onderzoeker/" target="_blank" rel="noopener">academic team</a>, I help organise academic and public events, bring expertise on polarisation and democratic resilience to the Institute. As the Institute connects civil society actors, it creates valuable opportunities to present my research to broader audiences through public events. It is also a place where I learn to translate academic work into accessible language — giving research meaning beyond the academy. <a href="mailto:kamil.bernaerts@hannah-arendt.institute">Contact me</a>.
+      </p>
+      <p><a href="https://hannah-arendt.institute/project/democratie-en-polarisatie/" target="_blank" rel="noopener">View my HAI profile →</a></p>
     </div>
   </section>
 
-  <!-- PUBLIC TALKS -->
-  <section class="section">
+  <!-- INVITE ME — expanded speaking section -->
+  <section class="section" id="invite">
     <div class="container">
-      <div style="border: 1px solid var(--color-border); border-radius: 6px; padding: 2rem;">
-        <p class="section__label" style="margin-bottom: 0.5rem;">Public engagement</p>
-        <h2 style="margin-bottom: 1rem;">Public talks</h2>
-        <p style="font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.75; max-width: 720px; margin-bottom: 1rem;">
-          I regularly give public lectures, panel discussions, and school visits on polarisation, democracy, and critical thinking. I speak to a wide range of audiences: secondary school students, university classes, local governments, civil society organisations, media professionals, and the general public.
-        </p>
-        <p style="font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.75; max-width: 720px; margin-bottom: 1.5rem;">
-          Highlights include guest lectures for the <a href="https://www.vub.be/nl/nieuws/vub-pact-school-tour-caroline-pauwels-atheneum-polarisatie" target="_blank" rel="noopener">VUB PACT School Tour</a> (Caroline Pauwels Academy of Critical Thinking), presentations at public events via the Hannah Arendt Institute, and the <a href="https://checkfirst.network/event/lunch-lecture-with-kamil-bernaerts/" target="_blank" rel="noopener">EDMO BELUX Lunch Lecture</a> on polarisation. Interested in inviting me for a lecture, debate, or workshop? <a href="/contact/">Get in touch</a>.
+      <span style="font-size: 0.85rem; color: var(--color-text-faint); letter-spacing: 0.05em; text-transform: uppercase;">Public engagement</span>
+      <h2>Lectures &amp; workshops</h2>
+      <p>
+        I give lectures, workshops, and panel contributions on polarisation, democracy, and critical thinking for a wide range of audiences: 
+        trade unions, local governments, civil society organisations, schools, media professionals, corporate teams, and the general public. 
+        Every talk is tailored to the audience and grounded in the latest political science research.
+      </p>
+
+      <h3 style="margin-top: 2rem;">Topics I speak on</h3>
+      <div class="pub-list">
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">Polarisation &amp; democracy</p>
+            <p class="pub-authors">Does polarisation really undermine democracy? What does the research say, and what can we do about it?</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">Affective polarisation</p>
+            <p class="pub-authors">Why do we dislike people who vote differently? The psychology and politics of us-versus-them thinking.</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">The global autocratisation wave</p>
+            <p class="pub-authors">Democracy is in retreat worldwide. How bad is it, why is it happening, and what can citizens do?</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">Institutional design &amp; conflict</p>
+            <p class="pub-authors">How do political institutions shape the way societies deal with deep disagreement? Lessons from Belgium and beyond.</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">Critical thinking &amp; media literacy</p>
+            <p class="pub-authors">For secondary schools and youth organisations. How to recognise manipulation, think independently, and engage constructively.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 2rem;">Formats</h3>
+      <p>
+        Keynote lecture (45–60 min) · Interactive workshop (half day) · Panel discussion or debate · Q&amp;A session following a lecture · 
+        School guest lecture (adapted for secondary education) · Custom format on request.
+      </p>
+
+      <h3 style="margin-top: 2rem;">Selected appearances</h3>
+      <p>
+        <a href="https://www.vub.be/nl/nieuws/vub-pact-school-tour-caroline-pauwels-atheneum-polarisatie" target="_blank" rel="noopener">VUB PACT School Tour</a> (Caroline Pauwels Academy of Critical Thinking) · 
+        <a href="https://checkfirst.network/event/lunch-lecture-with-kamil-bernaerts/" target="_blank" rel="noopener">EDMO BELUX Lunch Lecture</a> · 
+        <a href="https://puc.kuleuven.be/nl/opleiding/polarisatie-8adjxg90jwgep574/" target="_blank" rel="noopener">KU Leuven Metaforum</a> on polarisation · 
+        Public events via the Hannah Arendt Institute · 
+        ACV (upcoming, October 2026).
+      </p>
+
+      <div style="margin-top: 2rem; padding: 1.5rem; border: 1px solid var(--color-border); border-radius: 6px; background: var(--color-bg-soft, #fafafa);">
+        <p style="margin: 0; font-size: 1.05rem;">
+          <strong>Interested in inviting me?</strong> I am available for lectures, workshops, and panel contributions in Dutch and English. 
+          <a href="/contact/">Get in touch</a> to discuss your event — I am happy to tailor the content to your audience and format.
         </p>
       </div>
     </div>
@@ -51,13 +104,13 @@ As a member of the <a href="https://hannah-arendt.institute/samenwerken/onderzoe
   <!-- PUBLIC WRITING -->
   <section class="section">
     <div class="container">
-      <div style="border: 1px solid var(--color-border); border-radius: 6px; padding: 2rem;">
-        <p class="section__label" style="margin-bottom: 0.5rem;">Public writing</p>
-        <h2 style="margin-bottom: 1rem;">Essays & public writing</h2>
-        <p style="font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.75; max-width: 720px; margin-bottom: 1.5rem;">
-          Alongside academic publications, I write accessible essays and commentaries on polarisation, democracy, and current affairs. These pieces appear on my <a href="/writing/">writing page</a> and are occasionally republished.
-        </p>
-
+      <span style="font-size: 0.85rem; color: var(--color-text-faint); letter-spacing: 0.05em; text-transform: uppercase;">Public writing</span>
+      <h2>Essays &amp; public writing</h2>
+      <p>
+        Alongside academic publications, I write accessible essays and commentaries on polarisation, democracy, and current affairs. 
+        These pieces appear on my <a href="/writing/">writing page</a> and are occasionally republished.
+      </p>
+      <div class="pub-list">
         <div class="pub-item">
           <div>
             <p class="pub-title"><a href="/writing/vdem-2025-nl/">De autocratiserende tsunami is aan land gekomen in het Westen</a></p>
@@ -65,108 +118,99 @@ As a member of the <a href="https://hannah-arendt.institute/samenwerken/onderzoe
           </div>
           <div class="pub-meta"><p class="pub-year">2026</p></div>
         </div>
-
-        <a href="/writing/" class="section__more" style="margin-top: 1.5rem; display: inline-block;">All writing →</a>
       </div>
+      <p><a href="/writing/">All writing →</a></p>
     </div>
   </section>
 
   <!-- IN THE MEDIA -->
   <section class="section">
     <div class="container">
-      <p class="section__label">In the media</p>
-      <p style="font-size: 0.9375rem; color: var(--color-text-secondary); margin-bottom: 1.5rem; max-width: 680px;">
-        My research on institutional design, polarisation, and democracy has been covered in Belgian and international media.
-      </p>
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Polarisatie: bedreiging of motor voor democratie? — press release PhD</p>
-          <p class="pub-authors"><a href="https://press.vub.ac.be/polarisatie-bedreiging-of-motor-voor-democratie" target="_blank" rel="noopener">VUB Press</a></p>
+      <span style="font-size: 0.85rem; color: var(--color-text-faint); letter-spacing: 0.05em; text-transform: uppercase;">In the media</span>
+      <h2>Press &amp; media coverage</h2>
+      <p>My research on institutional design, polarisation, and democracy has been covered in Belgian and international media.</p>
+      <div class="pub-list">
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">Polarisatie: bedreiging of motor voor democratie? — press release PhD</p>
+            <p class="pub-authors"><a href="https://press.vub.ac.be/polarisatie-bedreiging-of-motor-voor-democratie" target="_blank" rel="noopener">VUB Press</a></p>
+          </div>
+          <div class="pub-meta"><p class="pub-year">2025</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2025</p></div>
-      </div>
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">"Democracy is never finished" — interview with Kamil Bernaerts &amp; Didier Caluwaerts</p>
-          <p class="pub-authors"><a href="https://www.vub.be/en/news/democracy-is-never-finished" target="_blank" rel="noopener">VUB News</a></p>
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">"Democracy is never finished" — interview with Kamil Bernaerts &amp; Didier Caluwaerts</p>
+            <p class="pub-authors"><a href="https://www.vub.be/en/news/democracy-is-never-finished" target="_blank" rel="noopener">VUB News</a></p>
+          </div>
+          <div class="pub-meta"><p class="pub-year">2024</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2024</p></div>
-      </div>
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Onderzoek VUB: Belgische democratie minder gevoelig voor polarisering</p>
-          <p class="pub-authors"><a href="https://www.knack.be/nieuws/belgie/politiek/onderzoek-vub-belgische-democratie-minder-gevoelig-voor-polarisering/" target="_blank" rel="noopener">Knack</a></p>
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">Onderzoek VUB: Belgische democratie minder gevoelig voor polarisering</p>
+            <p class="pub-authors"><a href="https://www.knack.be/nieuws/belgie/politiek/onderzoek-vub-belgische-democratie-minder-gevoelig-voor-polarisering/" target="_blank" rel="noopener">Knack</a></p>
+          </div>
+          <div class="pub-meta"><p class="pub-year">2022</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2022</p></div>
-      </div>
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">VUB: Belgische democratie is minder gevoelig aan polarisering</p>
-          <p class="pub-authors"><a href="https://www.hln.be/binnenland/vub-belgische-democratie-is-minder-gevoelig-aan-polarisering~a19058f5/" target="_blank" rel="noopener">Het Laatste Nieuws</a></p>
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">VUB: Belgische democratie is minder gevoelig aan polarisering</p>
+            <p class="pub-authors"><a href="https://www.hln.be/binnenland/vub-belgische-democratie-is-minder-gevoelig-aan-polarisering~a19058f5/" target="_blank" rel="noopener">Het Laatste Nieuws</a></p>
+          </div>
+          <div class="pub-meta"><p class="pub-year">2022</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2022</p></div>
-      </div>
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Notre système politique belge divise moins la société en deux</p>
-          <p class="pub-authors"><a href="https://www.rtbf.be/article/notre-systeme-politique-belge-divise-moins-la-societe-en-deux-que-les-democraties-majoritaires-selon-une-these-de-la-vub-11120434" target="_blank" rel="noopener">RTBF</a></p>
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">Notre système politique belge divise moins la société en deux</p>
+            <p class="pub-authors"><a href="https://www.rtbf.be/article/notre-systeme-politique-belge-divise-moins-la-societe-en-deux-que-les-democraties-majoritaires-selon-une-these-de-la-vub-11120434" target="_blank" rel="noopener">RTBF</a></p>
+          </div>
+          <div class="pub-meta"><p class="pub-year">2022</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2022</p></div>
-      </div>
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Onderzoek VUB: Belgische democratie minder gevoelig voor polarisering</p>
-          <p class="pub-authors"><a href="https://www.bruzz.be/samenleving/onderzoek-vub-belgische-democratie-minder-gevoelig-voor-polarisering-2022-12-09" target="_blank" rel="noopener">BRUZZ</a></p>
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">Onderzoek VUB: Belgische democratie minder gevoelig voor polarisering</p>
+            <p class="pub-authors"><a href="https://www.bruzz.be/samenleving/onderzoek-vub-belgische-democratie-minder-gevoelig-voor-polarisering-2022-12-09" target="_blank" rel="noopener">BRUZZ</a></p>
+          </div>
+          <div class="pub-meta"><p class="pub-year">2022</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2022</p></div>
-      </div>
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">La démocratie belge moins sensible à la polarisation</p>
-          <p class="pub-authors"><a href="https://www.lalibre.be/belgique/societe/2022/12/09/la-democratie-belge-moins-sensible-a-la-polarisation-MQ7FYPXDKVFLJO7TVFDED2L3QA/" target="_blank" rel="noopener">La Libre Belgique</a></p>
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">La démocratie belge moins sensible à la polarisation</p>
+            <p class="pub-authors"><a href="https://www.lalibre.be/belgique/societe/2022/12/09/la-democratie-belge-moins-sensible-a-la-polarisation-MQ7FYPXDKVFLJO7TVFDED2L3QA/" target="_blank" rel="noopener">La Libre Belgique</a></p>
+          </div>
+          <div class="pub-meta"><p class="pub-year">2022</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2022</p></div>
-      </div>
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Belgium's democracy less prone to polarisation</p>
-          <p class="pub-authors"><a href="https://www.brusselstimes.com/politics/335217/belgiums-democracy-less-prone-to-polarisation" target="_blank" rel="noopener">The Brussels Times</a></p>
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">Belgium's democracy less prone to polarisation</p>
+            <p class="pub-authors"><a href="https://www.brusselstimes.com/politics/335217/belgiums-democracy-less-prone-to-polarisation" target="_blank" rel="noopener">The Brussels Times</a></p>
+          </div>
+          <div class="pub-meta"><p class="pub-year">2022</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2022</p></div>
-      </div>
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">La démocratie belge moins sensible à la polarisation</p>
-          <p class="pub-authors"><a href="https://www.rtl.be/info/belgique/politique/la-democratie-belge-moins-sensible-a-la-polarisation-1420273.aspx" target="_blank" rel="noopener">RTL Info</a></p>
+        <div class="pub-item">
+          <div>
+            <p class="pub-title">La démocratie belge moins sensible à la polarisation</p>
+            <p class="pub-authors"><a href="https://www.rtl.be/info/belgique/politique/la-democratie-belge-moins-sensible-a-la-polarisation-1420273.aspx" target="_blank" rel="noopener">RTL Info</a></p>
+          </div>
+          <div class="pub-meta"><p class="pub-year">2022</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2022</p></div>
       </div>
     </div>
   </section>
 
   <!-- PHOTO -->
   <section class="section">
-  <div class="container">
-    <figure style="display: flex; flex-direction: column; align-items: center; margin: 0; text-align: center;">
-      <img 
-        src="/images/public-speaking.jpg" 
-        alt="Kamil Bernaerts giving a public lecture" 
-        style="width: 100%; max-width: 800px; border-radius: 4px;" 
-      />
-      <figcaption style="font-size: 0.75rem; color: var(--color-text-faint); margin-top: 0.5rem;">
-        &copy; Greetje Van Buggenhout
-      </figcaption>
-    </figure>
-  </div>
-</section>
+    <div class="container">
+      <figure style="display: flex; flex-direction: column; align-items: center; margin: 0; text-align: center;">
+        <img 
+          src="/images/public-speaking.jpg" 
+          alt="Kamil Bernaerts giving a public lecture" 
+          style="width: 100%; max-width: 800px; border-radius: 4px;" 
+        />
+        <figcaption style="font-size: 0.75rem; color: var(--color-text-faint); margin-top: 0.5rem;">
+          &copy; Greetje Van Buggenhout
+        </figcaption>
+      </figure>
+    </div>
+  </section>
 
 </BaseLayout>

@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LinkCard from '../components/LinkCard.astro';
+import Publication from '../components/Publication.astro';
+import { featured } from '../data/publications.js';
 ---
 
 <BaseLayout title="Home" description="Political scientist at Vrije Universiteit Brussel, studying the fascinating relationship between conflict and democracy.">
@@ -9,140 +12,161 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <div class="hero-layout">
         <div>
+          <p class="eyebrow">Dr. Kamil Bernaerts · Political scientist</p>
           <h1>Polarisation versus democracy?</h1>
-          <p class="intro" style="text-align: justify;">
-            I'm a doctor in Political Science, studying social conflict and polarisation within democratic societies. I specifically want to identify the fine line between harmful conflict and democracy. To do so, I devoted my <a href="/phd/">PhD dissertation</a> to the question whether polarisation undermines democracy (read a <a href="https://plc-journal.eu/article/view/25310" target="_blank" rel="noopener">published summary</a> or <a href="https://plc-journal.eu/article/view/25455" target="_blank" rel="noopener">published review</a>). During my PhD, I published various articles in leading political science journals, amongst which one won the <a href="https://www.tandfonline.com/journals/fdem20/collections/best-paper-frank-cass-prize" target="_blank" rel="noopener">Frank Cass Prize</a> for best 2023 article in <em>Democratization</em>. I am continuing my <a href="/cv/">academic career</a> as a postdoctoral researcher at VUB working on the broader question on conflict and democracy. I also work as a guest professor at the UHasselt where I teach an introductory course on political science, and devote a lot of attention on <a href="/outreach/">outreach</a>. I am a senior academic fellow at the <a href="https://hannah-arendt.institute/" target="_blank" rel="noopener">Hannah Arendt Institute</a>, and often engage in public lectures such as at the VUB Pauwels Academy of Critical Thinking (PACT) school tour.
+          <p class="lead">
+            I study the fine line between the conflict democracies need and the conflict that destroys them.
+            <strong>Not all polarisation is a threat</strong>, and my research shows which kinds are.
           </p>
-          <div class="pill-group">
-            <a href="/research/" class="pill">Publications</a>
-            <a href="/cv/" class="pill">Academic CV</a>
-            <a href="/outreach/" class="pill">Public talks</a>
+          <div class="btn-row">
+            <a href="/research/" class="btn">Explore my research →</a>
+            <a href="/outreach/#invite" class="btn btn--ghost">Invite me to speak</a>
           </div>
         </div>
         <div>
           <img src="/images/kamil-bernaerts.jpg" alt="Dr. Kamil Bernaerts" class="hero-photo" />
-          <p style="font-size: 0.6875rem; color: var(--color-text-faint); margin-top: 0.375rem;">&copy; Greetje Van Buggenhout</p>
+          <p class="caption">&copy; Greetje Van Buggenhout</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- INFO GRID -->
-  <section class="container">
-    <div class="info-grid">
-      <div>
-        <p class="info-grid__label">Positions</p>
-        <p class="info-grid__value">
-          Postdoc, Vrije Universiteit Brussel<br>
-          Guest Professor, Universiteit Hasselt<br>
-          Academic Fellow, Hannah Arendt Instituut
-        </p>
-      </div>
-      <div>
-        <p class="info-grid__label">Research interests</p>
-        <p class="info-grid__value">
-          Affective polarisation<br>
-          Democratic institutions<br>
-          Democracy<br>
-          Anti-democratic behavior<br>
-          Political conflict
-        </p>
-      </div>
-      <div>
-        <p class="info-grid__label">Contact</p>
-        <p class="info-grid__value">
-          <a href="mailto:kamil.bernaerts@vub.be">kamil.bernaerts@vub.be</a><br>
-          <span style="color: var(--color-text-secondary);">Vrije Universiteit Brussel<br>
-          Pleinlaan 2<br>
-          1050 Brussels, Belgium</span>
-        </p>
+  <!-- HIGHLIGHTS -->
+  <section>
+    <div class="container">
+      <div class="highlights">
+        <div class="highlight">
+          <p class="highlight__title">Frank Cass Prize</p>
+          <p class="highlight__text">Best 2023 article in <em>Democratization</em></p>
+        </div>
+        <div class="highlight">
+          <p class="highlight__title">Book with VUBPRESS</p>
+          <p class="highlight__text">PhD from VUB &amp; University of Warwick, published in 2025</p>
+        </div>
+        <div class="highlight">
+          <p class="highlight__title">Three roles</p>
+          <p class="highlight__text">Postdoc at VUB, guest professor at UHasselt, senior fellow at the Hannah Arendt Institute</p>
+        </div>
+        <div class="highlight">
+          <p class="highlight__title">Public speaker</p>
+          <p class="highlight__text">Lectures and workshops in Dutch and English</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- RECENT PUBLICATIONS -->
+  <!-- AUDIENCES -->
   <section class="section">
     <div class="container">
-      <p class="section__label">Recent publications</p>
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Polarising alone? The relationship between social contact and affective polarisation in Belgium and the UK</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong> &amp; Junius, N.</p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">Acta Politica</p>
-          <p class="pub-year">2026 · <span class="oa-badge oa-green" title="Green Open Access — accepted author manuscript available">Green OA</span> · <a href="https://link.springer.com/article/10.1057/s41269-026-00457-2" target="_blank" rel="noopener" class="pub-link">published ↗</a> · <a href="https://researchportal.vub.be/en/publications/polarising-alone-the-relationship-between-social-contact-and-affe/" target="_blank" rel="noopener" class="pub-link">AAM ↗</a></p>
-        </div>
-      </div> 
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Hate, not dislike? Understanding anti-democratic attitudes through a multi-dimensional understanding of affective polarization</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong></p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">Frontiers in Political Science</p>
-          <p class="pub-year">2026 · <span class="oa-badge oa-gold" title="Gold Open Access — freely available via publisher">Gold OA</span> · <a href="https://www.frontiersin.org/journals/political-science/articles/10.3389/fpos.2026.1910557/full" target="_blank" rel="noopener" class="pub-link">published ↗</a></p>
-        </div>
-      </div>  
-      
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Affect or emotions? Disaggregating affective polarisation to explain support for liberal democracy in Belgium and the United Kingdom</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong></p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">Political Studies Review</p>
-          <p class="pub-year">2026 · <span class="oa-badge oa-green" title="Green Open Access — accepted author manuscript available">Green OA</span> · <a href="https://journals.sagepub.com/doi/epub/10.1177/14789299261438223" target="_blank" rel="noopener" class="pub-link">published ↗</a> · <a href="https://researchportal.vub.be/en/publications/affect-or-emotions-disaggregating-affective-polarisation-to-expla/" target="_blank" rel="noopener" class="pub-link">AAM ↗</a></p>
-        </div>
+      <div class="section__head">
+        <p class="eyebrow">Find your way</p>
+        <h2>What brings you here?</h2>
       </div>
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Fight or unite? Exploring the link between consensus institutions, polarization, and political violence in 113 democracies over time (1900–2023)</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong> &amp; <a href="https://scholar.google.com/citations?hl=en&user=Eyhy4K4AAAAJ" target="_blank" rel="noopener">Caluwaerts, D.</a></p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">International Political Science Review</p>
-          <p class="pub-year">2025 · <span class="oa-badge oa-green" title="Green Open Access — accepted author manuscript available">Green OA</span> · <a href="https://journals.sagepub.com/doi/10.1177/01925121251355894" target="_blank" rel="noopener" class="pub-link">published ↗</a> · <a href="https://researchportal.vub.be/en/publications/fight-or-unite-exploring-the-link-between-consensus-institutions-/" target="_blank" rel="noopener" class="pub-link">AAM ↗</a></p>
-        </div>
+      <div class="grid-4">
+        <a href="/research/" class="audience-card">
+          <span class="audience-card__for">For researchers</span>
+          <span class="audience-card__title">Publications &amp; data</span>
+          <span class="audience-card__text">Articles, open data and working papers on affective polarisation and democratic institutions.</span>
+          <span class="audience-card__cta">Go to research →</span>
+        </a>
+        <a href="/outreach/" class="audience-card audience-card--ochre">
+          <span class="audience-card__for">For media &amp; organisers</span>
+          <span class="audience-card__title">Talks &amp; commentary</span>
+          <span class="audience-card__text">Keynotes, workshops, panels and expert commentary on polarisation and democracy.</span>
+          <span class="audience-card__cta">Go to outreach →</span>
+        </a>
+        <a href="/teaching/" class="audience-card audience-card--deep">
+          <span class="audience-card__for">For students</span>
+          <span class="audience-card__title">Courses &amp; theses</span>
+          <span class="audience-card__text">The courses I teach at UHasselt and VUB, and the thesis topics I supervise.</span>
+          <span class="audience-card__cta">Go to teaching →</span>
+        </a>
+        <a href="/writing/" class="audience-card audience-card--tint">
+          <span class="audience-card__for">For curious readers</span>
+          <span class="audience-card__title">Essays &amp; op-eds</span>
+          <span class="audience-card__text">Accessible pieces on the state of democracy, in Dutch and English.</span>
+          <span class="audience-card__cta">Go to writing →</span>
+        </a>
       </div>
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Institutional design and polarization. Do consensus democracies fare better in fighting polarization than majoritarian democracies?</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong>, <a href="https://scholar.google.com/citations?user=VhNtu44AAAAJ&hl=nl" target="_blank" rel="noopener">Blanckaert, B.</a>; <a href="https://scholar.google.com/citations?hl=en&user=Eyhy4K4AAAAJ" target="_blank" rel="noopener">Caluwaerts, D.</a></p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">Democratization</p>
-          <p class="pub-year">2023 · <span class="oa-badge oa-gold" title="Gold Open Access — freely available via publisher">Gold OA</span> · <a href="https://www.tandfonline.com/doi/full/10.1080/13510347.2022.2117300" target="_blank" rel="noopener" class="pub-link">published ↗</a></p>
-        </div>
-      </div>
-
-      <a href="/research/" class="section__more">All publications →</a>
     </div>
   </section>
 
-  <!-- SOCIETAL OUTREACH -->
+  <!-- ACHIEVEMENTS -->
+  <section class="section section--blue-tint">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">Achievements</p>
+        <h2>Awards &amp; recognition</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card card--award">
+          <p class="card__meta">2024 · <em>Democratization</em></p>
+          <h3>Frank Cass Prize</h3>
+          <p>Best article of 2023, for our study of whether consensus democracies fare better against polarisation. <a href="https://www.tandfonline.com/journals/fdem20/collections/best-paper-frank-cass-prize" target="_blank" rel="noopener">About the prize ↗</a></p>
+        </div>
+        <div class="card card--award">
+          <p class="card__meta">2021 · EUTOPIA university alliance</p>
+          <h3>EUTOPIA Co-tutelle PhD Scholarship</h3>
+          <p>Funded my joint PhD at Vrije Universiteit Brussel and the University of Warwick. <a href="/phd/">About my PhD →</a></p>
+        </div>
+        <div class="card card--award">
+          <p class="card__meta">2021 · VUB</p>
+          <h3>Excellence Award</h3>
+          <p>Top student in the master's programme, Faculty of Economy and Social Sciences. <a href="/cv/">Full CV →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PUBLICATIONS -->
   <section class="section">
     <div class="container">
-      <p class="section__label">Societal outreach</p>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; align-items: start;">
-        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-          <div class="project-card">
-            <p class="project-card__label">Senior academic fellow Hannah Arendt Instituut</p>
-            <p class="project-card__desc">As a member of the <a href="https://hannah-arendt.institute/samenwerken/onderzoeker/" target="_blank" rel="noopener">academic team</a>, I help organize academic and public events, bring expertise and insights to the Institute, and gain access to their network. I am proud to be a part of this fantastic organization.</p>
-          </div>
-          <div class="project-card">
-            <p class="project-card__label">Public lectures</p>
-            <p class="project-card__desc">As a publicly funded researcher, I also give public lectures when I am invited at public events which deal with related topics of interest. This includes the <a href="https://www.vub.be/nl/nieuws/vub-pact-school-tour-caroline-pauwels-atheneum-polarisatie" target="_blank" rel="noopener">PACT school tour</a>, a VUB initiative through which I give guest lectures on polarisation and critical thinking for secondary school students. Do get in <a href="/contact/">contact</a> if you would be interested.</p>
-          </div>
-        </div>
+      <div class="section__head">
+        <p class="eyebrow">Research</p>
+        <h2>Featured publications</h2>
+        <p>Open each abstract to read what the study found, without leaving this page.</p>
+      </div>
+      <div class="entry-list">
+        {featured.map((pub) => <Publication pub={pub} />)}
+      </div>
+      <a href="/research/" class="more-link">All publications →</a>
+    </div>
+  </section>
+
+  <!-- OUTREACH -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="split split--even">
         <div>
-          <img src="/images/kamil-presenting.jpg" alt="Kamil Bernaerts giving a public lecture" style="width: 100%; border-radius: 6px; display: block;" />
-          <p style="font-size: 0.6875rem; color: var(--color-text-faint); margin-top: 0.375rem;">&copy; Greetje Van Buggenhout</p>
+          <p class="eyebrow">Societal outreach</p>
+          <h2>Research that leaves the university</h2>
+          <p class="prose">As a publicly funded researcher, I give public lectures on polarisation and critical thinking, including the <a href="https://www.vub.be/nl/nieuws/vub-pact-school-tour-caroline-pauwels-atheneum-polarisatie" target="_blank" rel="noopener">PACT school tour</a> for secondary schools. As a senior academic fellow at the <a href="https://hannah-arendt.institute/samenwerken/onderzoeker/" target="_blank" rel="noopener">Hannah Arendt Institute</a>, I help bring research to policymakers and civil society.</p>
+          <div class="btn-row">
+            <a href="/outreach/#invite" class="btn btn--blue">Invite me to speak →</a>
+          </div>
         </div>
+        <figure class="figure">
+          <img src="/images/kamil-presenting.jpg" alt="Kamil Bernaerts giving a public lecture" />
+          <figcaption>&copy; Greetje Van Buggenhout</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">Contact</p>
+        <h2>Get in touch</h2>
+      </div>
+      <div class="grid-3">
+        <LinkCard href="mailto:kamil.bernaerts@vub.be" title="Email (VUB)" sub="kamil.bernaerts@vub.be" />
+        <LinkCard href="https://be.linkedin.com/in/kamil-bernaerts-431753201" title="LinkedIn" sub="Kamil Bernaerts" />
+        <LinkCard href="https://kamilbernaerts.bsky.social" title="Bluesky" sub="@kamilbernaerts.bsky.social" />
+        <LinkCard href="https://scholar.google.com/citations?user=7Pmo70UAAAAJ&hl=en" title="Google Scholar" sub="Publications and citations" />
+        <LinkCard href="https://orcid.org/0000-0002-3380-6639" title="ORCID" sub="0000-0002-3380-6639" />
+        <LinkCard href="/contact/" title="All contact details" sub="Other email addresses and profiles" />
       </div>
     </div>
   </section>

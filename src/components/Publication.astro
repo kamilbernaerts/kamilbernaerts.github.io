@@ -1,0 +1,30 @@
+---
+// One publication row, with links and an optional fold-out abstract.
+const { pub } = Astro.props;
+const oa = {
+  gold: { label: 'Gold OA', title: 'Gold Open Access — freely available via publisher' },
+  green: { label: 'Green OA', title: 'Green Open Access — accepted author manuscript available' },
+  diamond: { label: 'Diamond OA', title: 'Diamond Open Access — freely available to read and download' },
+}[pub.oa];
+---
+<article class="entry">
+  <div>
+    <h3 class="entry__title">{pub.title}</h3>
+    <p class="entry__sub" set:html={pub.authors} />
+  </div>
+  <div class="entry__meta">
+    {pub.venue && <p class="entry__venue">{pub.venue}</p>}
+    <p>
+      {pub.year}
+      {oa && <> · <span class={`oa-badge oa-${pub.oa}`} title={oa.title}>{oa.label}</span></>}
+      {pub.url && <> · <a href={pub.url} target="_blank" rel="noopener">published ↗</a></>}
+      {pub.aam && <> · <a href={pub.aam} target="_blank" rel="noopener">AAM ↗</a></>}
+    </p>
+  </div>
+  {pub.abstract && (
+    <details class="abstract entry__full">
+      <summary>Abstract</summary>
+      <div class="abstract__body" set:html={pub.abstract} />
+    </details>
+  )}
+</article>

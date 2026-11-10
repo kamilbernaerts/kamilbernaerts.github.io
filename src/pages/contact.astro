@@ -1,127 +1,69 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import LinkCard from '../components/LinkCard.astro';
 ---
 <BaseLayout title="Contact" description="Get in touch with Kamil Bernaerts.">
-  <section class="page-header">
-    <div class="container">
-      <h1>Contact</h1>
-    </div>
-  </section>
+
+  <PageHeader
+    title="Contact"
+    lead="For research collaborations, lectures, media requests or questions about my work, email is the fastest way to reach me."
+  />
+
+  <!-- EMAIL + PHOTO -->
   <section class="section">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 200px; gap: 2.5rem; align-items: start;">
-        <div class="info-grid" style="border-top: none; padding-top: 0;">
-          <div>
-            <p class="info-grid__label">Email</p>
-            <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.25rem;">
-              <a href="mailto:kamil.bernaerts@vub.be" class="email-badge">
-                <span class="email-badge__icon">✉</span>
-                <span class="email-badge__text">
-                  <span class="email-badge__org">VUB</span>
-                  <span class="email-badge__addr">kamil.bernaerts@vub.be</span>
-                </span>
-              </a>
-              <a href="mailto:kamil.bernaerts@uhasselt.be" class="email-badge">
-                <span class="email-badge__icon">✉</span>
-                <span class="email-badge__text">
-                  <span class="email-badge__org">UHasselt</span>
-                  <span class="email-badge__addr">kamil.bernaerts@uhasselt.be</span>
-                </span>
-              </a>
-              <a href="mailto:kamil.bernaerts@hannah-arendt.institute" class="email-badge">
-                <span class="email-badge__icon">✉</span>
-                <span class="email-badge__text">
-                  <span class="email-badge__org">Hannah Arendt Instituut</span>
-                  <span class="email-badge__addr">kamil.bernaerts@hannah-arendt.institute</span>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div>
-            <p class="info-grid__label">Office</p>
-            <p class="info-grid__value">
-              Vrije Universiteit Brussel<br>
-              Pleinlaan 2<br>
-              1050 Brussels, Belgium
-            </p>
-          </div>
-          <div>
-            <p class="info-grid__label">Online</p>
-            <p class="info-grid__value">
-              <a href="https://kamilbernaerts.bsky.social" target="_blank" rel="noopener">Bluesky</a><br>
-              <a href="https://be.linkedin.com/in/kamil-bernaerts-431753201" target="_blank" rel="noopener">LinkedIn</a><br>
-              <a href="https://scholar.google.com/citations?user=7Pmo70UAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-            </p>
-          </div>
-        </div>
+      <div class="split">
         <div>
-          <img src="/images/profiel-vub.jpeg" alt="Dr. Kamil Bernaerts" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;" />
+          <div class="section__head">
+            <p class="eyebrow">Email</p>
+            <h2>Write to me</h2>
+          </div>
+          <div class="stack">
+            <LinkCard href="mailto:kamil.bernaerts@vub.be" title="VUB — research and general questions" sub="kamil.bernaerts@vub.be" />
+            <LinkCard href="mailto:kamil.bernaerts@uhasselt.be" title="UHasselt — teaching" sub="kamil.bernaerts@uhasselt.be" />
+            <LinkCard href="mailto:kamil.bernaerts@hannah-arendt.institute" title="Hannah Arendt Instituut — outreach" sub="kamil.bernaerts@hannah-arendt.institute" />
+          </div>
         </div>
-      </div>
-      <div style="max-width: 680px; margin-top: 2rem;">
-        <h3 style="margin-bottom: 0.75rem;">For public engagement</h3>
-        <p style="font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.75; margin-bottom: 1.5rem;">
-          I am available for guest lectures, panel discussions, workshops, school visits, and media commentary 
-          on topics related to polarisation, democratic resilience, and the state of democracy. 
-          See my <a href="/outreach/">outreach page</a> for more details.
-        </p>
-        <h3 style="margin-bottom: 0.75rem;">For academic inquiries</h3>
-        <p style="font-size: 0.9375rem; color: var(--color-text-secondary); line-height: 1.75;">
-          If you're interested in collaborating on research projects and papers or have questions about my work, please reach out via email. 
-        </p>
+        <img src="/images/profiel-vub.jpeg" alt="Dr. Kamil Bernaerts" class="photo" style="aspect-ratio: 1; border-radius: 50%; max-width: 280px; margin: 0 auto;" />
       </div>
     </div>
   </section>
+
+  <!-- PROFILES -->
+  <section class="section section--blue-tint">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">Online</p>
+        <h2>Profiles</h2>
+      </div>
+      <div class="grid-3">
+        <LinkCard href="https://scholar.google.com/citations?user=7Pmo70UAAAAJ&hl=en" title="Google Scholar" sub="Publications and citations" />
+        <LinkCard href="https://orcid.org/0000-0002-3380-6639" title="ORCID" sub="0000-0002-3380-6639" />
+        <LinkCard href="https://researchportal.vub.be/en/persons/kamil-bernaerts" title="VUB Research Portal" sub="Institutional profile" />
+        <LinkCard href="https://be.linkedin.com/in/kamil-bernaerts-431753201" title="LinkedIn" sub="Kamil Bernaerts" />
+        <LinkCard href="https://kamilbernaerts.bsky.social" title="Bluesky" sub="@kamilbernaerts.bsky.social" />
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ARE YOU WRITING -->
+  <section class="section">
+    <div class="container">
+      <div class="grid-2">
+        <div class="card">
+          <h3>For public engagement</h3>
+          <p>I am available for guest lectures, panel discussions, workshops, school visits, and media commentary on topics related to polarisation, democratic resilience, and the state of democracy.</p>
+          <a href="/outreach/" class="more-link">See what I offer →</a>
+        </div>
+        <div class="card">
+          <h3>For academic inquiries</h3>
+          <p>If you're interested in collaborating on research projects and papers or have questions about my work, please reach out via email.</p>
+          <a href="/research/" class="more-link">See my research →</a>
+        </div>
+      </div>
+      <p class="small muted" style="margin-top: 2rem;">Office: Vrije Universiteit Brussel, Pleinlaan 2, 1050 Brussels, Belgium</p>
+    </div>
+  </section>
+
 </BaseLayout>
-
-<style>
-  .email-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    padding: 0.5rem 0.75rem;
-    background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    text-decoration: none;
-    transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.1s ease;
-  }
-
-  .email-badge:hover {
-    border-color: var(--color-accent);
-    background-color: var(--color-accent-light);
-    transform: translateY(-1px);
-    opacity: 1;
-  }
-
-  .email-badge__icon {
-    font-size: 0.875rem;
-    color: var(--color-accent);
-    flex-shrink: 0;
-  }
-
-  .email-badge__text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.05rem;
-  }
-
-  .email-badge__org {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--color-text);
-    font-family: var(--font-sans);
-    line-height: 1.2;
-  }
-
-  .email-badge__addr {
-    font-size: 0.6875rem;
-    color: var(--color-text-muted);
-    font-family: var(--font-sans);
-    line-height: 1.2;
-  }
-
-  .email-badge:hover .email-badge__org {
-    color: var(--color-accent);
-  }
-</style>

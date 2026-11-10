@@ -3,15 +3,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHeader from '../../components/PageHeader.astro';
 
 // ════════════════════════════════════════════════════════════════════════
-// HOE VOEG JE EEN NIEUWE POST TOE?
+// HOE VOEG JE EEN NIEUW ARTIKEL TOE?
 //
-// 1. Kopieer één blok { ... } hieronder
-// 2. Plak het BOVENAAN de lijst (nieuwste post eerst)
-// 3. Vervang de waarden
+// Deze pagina vult zichzelf. Maak een nieuw .md-bestand in deze map
+// (kopieer een bestaand artikel) en pas bovenaan de gegevens aan:
 //
-// topics: kies uit de sleutels van `topicLabels` hieronder (of voeg er een
-//         toe). Bezoekers kunnen op deze onderwerpen filteren.
-// image:  laat weg als er geen afbeelding is.
+//   title:    de kop
+//   date:     de datum zoals ze getoond wordt, bv. "26 March 2026"
+//   sortDate: dezelfde datum als "2026-03-26" (bepaalt de volgorde)
+//   lang:     "NL" of "EN"
+//   topics:   onderwerpen voor de filter, uit de lijst hieronder
+//   image:    optioneel, bv. "/images/mijn-foto.jpg"
+//
+// Het nieuwste artikel komt automatisch bovenaan als hoofdartikel, en de
+// eerste zinnen van de tekst worden automatisch als inleiding getoond.
 // ════════════════════════════════════════════════════════════════════════
 const topicLabels = {
   democracy: 'Democracy',
@@ -21,55 +26,38 @@ const topicLabels = {
   youth: 'Youth',
 };
 
-const posts = [
-  {
-    href: '/writing/vdem-2025-nl/',
-    title: 'De derde golf van autocratisering: een ongeziene tsunami?',
-    date: '26 maart 2026',
-    lang: 'NL',
-    source: 'Gebaseerd op het V-Dem-rapport 2026',
-    excerpt: 'Nu volgens het laatste V-Dem rapport de democratie wereldwijd onder ongekende druk staat, bespreekt dit artikel de mondiale staat van de democratie in 2025. De democratie is teruggevallen naar het niveau van 1978, en de golf van autocratisering heeft nu elke regio van de wereld bereikt.',
-    image: '/images/vdem-1.png',
-    imageAlt: 'Kaart van regimetypes ter wereld',
-    topics: ['democracy', 'autocratisation'],
-    cta: 'Lees het artikel',
-  },
-  {
-    href: '/writing/vdem-2025/',
-    title: 'The third wave of autocratization: an unprecedented tsunami?',
-    date: '26 March 2026',
-    lang: 'EN',
-    source: 'Based on the 2026 V-Dem report',
-    excerpt: "As democracy is under unprecedented pressure worldwide, I provide a short overview of the global state of democracy in 2025 based on V-Dem. The report shows democracy has fallen back to 1978 levels, with autocratisation now reaching Western Europe and North America.",
-    image: '/images/vdem-1.png',
-    imageAlt: 'Map of regimes of the world',
-    topics: ['democracy', 'autocratisation'],
-    cta: 'Read the article',
-  },
-  {
-    href: '/writing/bataljong-polarisatie/',
-    title: 'Wanneer wij niet meer jij en ik zijn, maar zij, die en hij',
-    date: '1 september 2024',
-    lang: 'NL',
-    source: 'Dropzone (Bataljong)',
-    excerpt: 'Polarisatie hoeft niet altijd slecht te zijn. Zonder meningsverschillen zou onze maatschappij niet kunnen evolueren. Maar groepsdenken, een vijandsbeeld en sterke negatieve emoties zijn wel degelijk gevaarlijke alarmsignalen.',
-    topics: ['polarisation', 'democracy', 'youth'],
-    cta: 'Lees het artikel',
-  },
-  {
-    href: '/writing/polarisatie-democratieen/',
-    title: 'Waarom kampen sommige democratieën meer met polarisatie dan andere?',
-    date: '20 oktober 2022',
-    lang: 'NL',
-    source: 'Stuk Rood Vlees · met Benjamin Blanckaert & Didier Caluwaerts',
-    excerpt: 'Politieke instellingen verklaren waarom consensusdemocratieën minder polarisatie vertonen dan meerderheidsdemocratieën. Dat is goed nieuws voor beleidsmakers: onder de juiste institutionele voorwaarden kunnen democratieën polarisatie terugdringen.',
-    image: '/images/post1-header.jpg',
-    imageAlt: 'Polarisatie en democratie',
-    topics: ['polarisation', 'democracy', 'institutions'],
-    cta: 'Lees het artikel',
-  },
-];
+// The opening of an article: whole sentences from its first paragraph, up to a word limit.
+function opening(raw, maxWords) {
+  const paragraph = raw
+    .split(/\n\s*\n/)
+    .map((block) => block.trim())
+    .find((block) => block && !block.startsWith('<') && !block.startsWith('#')) || '';
+  const text = paragraph
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/[*_]/g, '')
+    .replace(/\s+/g, ' ');
+  const sentences = text.split(/(?<=[.!?])\s+/);
+  let out = '';
+  for (const sentence of sentences) {
+    const next = out ? `${out} ${sentence}` : sentence;
+    if (out && next.split(' ').length > maxWords) break;
+    out = next;
+  }
+  return out;
+}
 
+const posts = Object.values(import.meta.glob('./*.md', { eager: true }))
+  .map((post) => ({
+    ...post.frontmatter,
+    href: post.url.endsWith('/') ? post.url : `${post.url}/`,
+    raw: post.rawContent(),
+    topics: post.frontmatter.topics || [],
+  }))
+  .sort((a, b) =>
+    (b.sortDate || '').localeCompare(a.sortDate || '') || (a.lang === 'EN' ? -1 : 1) - (b.lang === 'EN' ? -1 : 1));
+
+const [lead, ...rest] = posts;
+const more = (post) => (post.lang === 'NL' ? 'Lees verder' : 'Continue reading');
 const usedTopics = Object.keys(topicLabels).filter((t) => posts.some((p) => p.topics.includes(t)));
 ---
 
@@ -97,25 +85,31 @@ const usedTopics = Object.keys(topicLabels).filter((t) => posts.some((p) => p.to
         ))}
       </div>
 
-      <div id="postList" style="margin-top: 1.75rem;">
-        {posts.map((post) => (
-          <article class="post-card" data-lang={post.lang} data-topics={post.topics.join(' ')}>
-            {post.image
-              ? <img src={post.image} alt={post.imageAlt} class="post-card__thumb" loading="lazy" />
-              : <div class="post-card__thumb post-card__thumb--empty" aria-hidden="true"></div>}
-            <div>
-              <p class="post-card__meta"><span class="post-card__lang">{post.lang}</span> · {post.date} · {post.source}</p>
-              <h2 class="post-card__title"><a href={post.href}>{post.title}</a></h2>
-              <p class="post-card__excerpt">{post.excerpt}</p>
-              <div class="tag-row">
-                {post.topics.map((t) => (
-                  <button type="button" class="chip" data-filter="topic" data-value={t} aria-pressed="false" title={`Show all articles on ${topicLabels[t].toLowerCase()}`}>{topicLabels[t]}</button>
-                ))}
-              </div>
-              <a href={post.href} class="more-link">{post.cta} →</a>
-            </div>
-          </article>
-        ))}
+      <div style="margin-top: 1.75rem;">
+        <!-- Lead story: the most recent article -->
+        <article class="story paper-lead" data-lang={lead.lang} data-topics={lead.topics.join(' ')} lang={lead.lang.toLowerCase()}>
+          <div>
+            <p class="story__meta"><span class="story__lang">{lead.lang}</span> · {lead.date}{lead.venue && ` · ${lead.venue}`}</p>
+            <h2><a href={lead.href}>{lead.title}</a></h2>
+            <p class="story__text">{opening(lead.raw, 110)}</p>
+            <a href={lead.href} class="more-link">{more(lead)} →</a>
+          </div>
+          {lead.image && <img src={lead.image} alt="" class="story__img" />}
+        </article>
+
+        <!-- The other articles, in columns -->
+        <div class="paper-grid">
+          {rest.map((post) => (
+            <article class="story" data-lang={post.lang} data-topics={post.topics.join(' ')} lang={post.lang.toLowerCase()}>
+              {post.image && <img src={post.image} alt="" class="story__img" loading="lazy" />}
+              <p class="story__meta"><span class="story__lang">{post.lang}</span> · {post.date}{post.venue && ` · ${post.venue}`}</p>
+              <h2><a href={post.href}>{post.title}</a></h2>
+              <p class="story__text">{opening(post.raw, 60)}</p>
+              <a href={post.href} class="more-link">{more(post)} →</a>
+            </article>
+          ))}
+        </div>
+
         <p id="noPosts" class="muted" hidden>No articles match this combination yet. <button type="button" class="chip" id="filter-reset">Show all articles</button></p>
       </div>
 
@@ -127,16 +121,16 @@ const usedTopics = Object.keys(topicLabels).filter((t) => posts.some((p) => p.to
 <script>
   const state = { lang: 'all', topic: 'all' };
   const chips = document.querySelectorAll('.chip[data-filter]');
-  const posts = document.querySelectorAll('.post-card');
+  const stories = document.querySelectorAll('.story[data-lang]');
   const empty = document.getElementById('noPosts');
 
   function apply() {
     let visible = 0;
-    posts.forEach((post) => {
-      const okLang = state.lang === 'all' || post.dataset.lang === state.lang;
-      const okTopic = state.topic === 'all' || post.dataset.topics.split(' ').includes(state.topic);
-      post.hidden = !(okLang && okTopic);
-      if (!post.hidden) visible++;
+    stories.forEach((story) => {
+      const okLang = state.lang === 'all' || story.dataset.lang === state.lang;
+      const okTopic = state.topic === 'all' || story.dataset.topics.split(' ').includes(state.topic);
+      story.hidden = !(okLang && okTopic);
+      if (!story.hidden) visible++;
     });
     chips.forEach((chip) => {
       chip.setAttribute('aria-pressed', String(state[chip.dataset.filter] === chip.dataset.value));
@@ -146,9 +140,7 @@ const usedTopics = Object.keys(topicLabels).filter((t) => posts.some((p) => p.to
 
   chips.forEach((chip) => {
     chip.addEventListener('click', () => {
-      const { filter, value } = chip.dataset;
-      // Clicking the active topic again switches the filter off.
-      state[filter] = state[filter] === value && value !== 'all' ? 'all' : value;
+      state[chip.dataset.filter] = chip.dataset.value;
       apply();
     });
   });

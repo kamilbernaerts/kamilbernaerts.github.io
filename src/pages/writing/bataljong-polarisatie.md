@@ -13,6 +13,8 @@ venue: "Dropzone (Bataljong)"
 venueUrl: "https://online.fliphtml5.com/pcvtf/olzv/#p=6-"
 
 tags: ["Polarisatie", "Democratie", "Jongeren"]
+sortDate: "2024-09-01"
+topics: ["polarisation", "democracy", "youth"]
 ---
 
 Polarisatie wordt vaak gezien als iets slechts. Het doet denken aan felle discussies, politici die niet overeenkomen of geruzie over politiek. Maar polarisatie hoeft niet altijd iets slechts te zijn. Algemeen gesproken betekent polarisatie dat mensen en/of meningen uit elkaar bewegen. Dit kan inderdaad leiden tot bitsige debatten, zowel tussen vrienden, collega's of buren als tussen politici. Maar zolang de debatten op een respectvolle manier gebeuren en alle betrokkenen elkaar respecteren, hoeft dat op zich geen probleem te zijn.

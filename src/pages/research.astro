@@ -13,54 +13,17 @@ import { published, workingPapers } from '../data/publications.js';
     lead="My research is driven by a simple, yet challenging question: when does conflict become a threat to democracy?"
   />
 
-  <!-- INTRO + PROFILES -->
-  <section class="section">
-    <div class="container">
-      <div class="split">
-        <div class="prose">
-          <h2>Conflict and democracy</h2>
-          <p>Our societies are (re)polarising, as the figure below shows, and the most common reaction is to see that as inherently dangerous. My work is built on the conviction that understanding the distinction between the conflict that democracies need and the conflict that destroys them is one of the most urgent tasks for political science today.</p>
-          <p>In doing so, I have developed a strong interest in studying different sorts of polarisation, and the broader socio-institutional framework within which it erupts.</p>
-        </div>
-        <div class="stack">
-          <LinkCard href="https://scholar.google.com/citations?user=7Pmo70UAAAAJ&hl=en" title="Google Scholar" sub="Full publication metrics" />
-          <LinkCard href="https://researchportal.vub.be/en/persons/kamil-bernaerts" title="VUB Research Portal" sub="Institutional profile" />
-          <LinkCard href="https://orcid.org/0000-0002-3380-6639" title="ORCID" sub="0000-0002-3380-6639" />
-          <LinkCard href="/phd/" title="PhD research" sub="Dissertation and book" />
-        </div>
-      </div>
-
-      <figure class="figure figure--chart" style="margin-top: 2.5rem;">
-        <img src="/images/polarisation-vdem.png" alt="Figure depicting the global rise of polarisation according to V-Dem data" />
-        <figcaption>Global increase in idea-based and identity-based polarisation. Source: V-Dem (2026).</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- RESEARCH THEMES -->
-  <section class="section">
-    <div class="container">
-      <div class="section__head">
-        <h2>Research themes</h2>
-      </div>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Kinds of polarisation and democracy</h3>
-          <p>How do different kinds of polarisation relate to democratic behavior?</p>
-        </div>
-        <div class="card">
-          <h3>Institutions and polarisation</h3>
-          <p>How do democratic institutions shape polarisation dynamics and their consequences?</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- PUBLISHED -->
   <section class="section" id="publications">
     <div class="container">
       <div class="section__head">
         <h2>Published &amp; accepted articles and books</h2>
+        <p>
+          Also on
+          <a href="https://scholar.google.com/citations?user=7Pmo70UAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a>,
+          the <a href="https://researchportal.vub.be/en/persons/kamil-bernaerts" target="_blank" rel="noopener">VUB Research Portal ↗</a>
+          and <a href="https://orcid.org/0000-0002-3380-6639" target="_blank" rel="noopener">ORCID ↗</a>.
+        </p>
       </div>
       <div class="entry-list">
         {published.map((pub) => <Publication pub={pub} />)}
@@ -80,6 +43,30 @@ import { published, workingPapers } from '../data/publications.js';
     </div>
   </section>
 
+  <!-- BACKGROUND + THEMES -->
+  <section class="section">
+    <div class="container">
+      <div class="split split--even">
+        <div class="prose">
+          <h2>Conflict and democracy</h2>
+          <p>Our societies are (re)polarising, and the most common reaction is to see that as inherently dangerous. My work is built on the conviction that understanding the distinction between the conflict that democracies need and the conflict that destroys them is one of the most urgent tasks for political science today.</p>
+          <p>In doing so, I have developed a strong interest in studying different sorts of polarisation, and the broader socio-institutional framework within which it erupts.</p>
+        </div>
+        <div>
+          <h2>Research themes</h2>
+          <div class="card">
+            <h4>Kinds of polarisation and democracy</h4>
+            <p>How do different kinds of polarisation relate to democratic behavior?</p>
+          </div>
+          <div class="card" style="margin-top: 0.9rem;">
+            <h4>Institutions and polarisation</h4>
+            <p>How do democratic institutions shape polarisation dynamics and their consequences?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PHOTO + NEXT STEPS -->
   <section class="section">
     <div class="container">
@@ -91,6 +78,7 @@ import { published, workingPapers } from '../data/publications.js';
         <div>
           <h2>Further reading</h2>
           <div class="stack">
+            <LinkCard href="/phd/" title="PhD research" sub="Dissertation and book" />
             <LinkCard href="/writing/" title="Essays & op-eds" sub="The same research, written for a wide audience" />
             <LinkCard href="/cv/" title="Curriculum vitae" sub="Positions, education and awards" />
             <LinkCard href="/contact/" title="Collaborate" sub="Get in touch about research projects and papers" />

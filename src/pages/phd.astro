@@ -8,7 +8,6 @@ import { dissertationAbstract } from '../data/publications.js';
 <BaseLayout title="PhD" description="Friends or Foes: Does polarisation really undermine democracy?">
 
   <PageHeader
-    eyebrow="PhD research"
     title="Friends or Foes: Does polarisation really undermine democracy?"
     lead="Understanding the two-way relationship between polarisation dynamics and the processes and institutions of democratic contestation."
   />
@@ -19,21 +18,21 @@ import { dissertationAbstract } from '../data/publications.js';
       <div class="split">
         <div>
           <div class="section__head">
-            <p class="eyebrow">Dissertation</p>
-            <h2>Published as a book by VUBPRESS (2025)</h2>
+            <h2>Dissertation</h2>
+            <p>Published as a monograph by VUBPRESS (2025).</p>
           </div>
           <div class="grid-3" style="margin-bottom: 2rem;">
-            <div class="stat">
-              <p class="stat__label">Institutions</p>
-              <p class="stat__value">Vrije Universiteit Brussel<br>University of Warwick</p>
+            <div class="fact">
+              <p class="fact__label">Institutions</p>
+              <p class="fact__value">Vrije Universiteit Brussel<br>University of Warwick</p>
             </div>
-            <div class="stat">
-              <p class="stat__label">Supervisors</p>
-              <p class="stat__value">Didier Caluwaerts (VUB)<br>Michael Saward (Warwick)</p>
+            <div class="fact">
+              <p class="fact__label">Supervisors</p>
+              <p class="fact__value">Didier Caluwaerts (VUB)<br>Michael Saward (Warwick)</p>
             </div>
-            <div class="stat">
-              <p class="stat__label">Funder</p>
-              <p class="stat__value">EUTOPIA Co-tutelle PhD Scholarship 2021–2025</p>
+            <div class="fact">
+              <p class="fact__label">Funder</p>
+              <p class="fact__value">EUTOPIA Co-tutelle PhD Scholarship 2021–2025</p>
             </div>
           </div>
           <div class="stack">
@@ -43,7 +42,7 @@ import { dissertationAbstract } from '../data/publications.js';
           </div>
         </div>
         <figure class="figure">
-          <img src="/images/Cover.png" alt="PhD dissertation Kamil Bernaerts, cover painting by Hazel Van Hove" style="box-shadow: 0 8px 24px rgba(21, 30, 102, 0.18);" />
+          <img src="/images/Cover.png" alt="PhD dissertation Kamil Bernaerts, cover painting by Hazel Van Hove" />
           <figcaption>Painting by Hazel Van Hove</figcaption>
         </figure>
       </div>
@@ -51,11 +50,10 @@ import { dissertationAbstract } from '../data/publications.js';
   </section>
 
   <!-- ABSTRACT -->
-  <section class="section section--blue-tint">
+  <section class="section section--alt">
     <div class="container">
       <div class="section__head">
-        <p class="eyebrow">Abstract</p>
-        <h2>What the dissertation shows</h2>
+        <h2>Abstract</h2>
       </div>
       <div class="prose" set:html={dissertationAbstract} />
     </div>
@@ -70,7 +68,7 @@ import { dissertationAbstract } from '../data/publications.js';
       </figure>
       <div class="grid-2" style="margin-top: 2rem;">
         <LinkCard href="/research/#publications" title="Articles from the dissertation" sub="All publications, with abstracts" />
-        <LinkCard href="/outreach/" title="Invite me to talk about it" sub="Lectures and workshops" />
+        <LinkCard href="/outreach/" title="Lectures and workshops" sub="Public talks on this research" />
       </div>
     </div>
   </section>

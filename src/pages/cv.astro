@@ -1,16 +1,37 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import LinkCard from '../components/LinkCard.astro';
 ---
 
 <BaseLayout title="CV" description="Academic curriculum vitae of Dr. Kamil Bernaerts.">
 
-  <section class="page-header">
+  <PageHeader
+    title="Curriculum vitae"
+    lead="Postdoctoral researcher at VUB, guest professor at UHasselt and senior academic fellow at the Hannah Arendt Institute."
+  >
+    <a href="/Academic_cv_Kamil_Bernaerts.pdf" target="_blank" rel="noopener" class="btn">Download full CV (PDF)</a>
+  </PageHeader>
+
+  <!-- AT A GLANCE -->
+  <section class="section">
     <div class="container">
-      <h1>Curriculum vitae</h1>
-      <div style="margin-top: 1.25rem;">
-        <a href="/Academic_cv_Kamil_Bernaerts.pdf" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9375rem; padding: 0.625rem 1.25rem; border: 1px solid var(--color-accent); border-radius: 4px; color: var(--color-accent); text-decoration: none;">
-          Download full CV (PDF) →
-        </a>
+      <div class="section__head">
+        <h2>At a glance</h2>
+      </div>
+      <div class="grid-3">
+        <div class="fact">
+          <p class="fact__label">Languages</p>
+          <p class="fact__value">Dutch (native)<br>English (proficient)</p>
+        </div>
+        <div class="fact">
+          <p class="fact__label">Skills</p>
+          <p class="fact__value">R (3+ years)<br>Survey design &amp; fielding<br>Causal inference</p>
+        </div>
+        <div class="fact">
+          <p class="fact__label">Peer review</p>
+          <p class="fact__value">Acta Politica · EJPR<br>Nature Human Behaviour<br>Social Science Quarterly</p>
+        </div>
       </div>
     </div>
   </section>
@@ -18,27 +39,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- POSITIONS -->
   <section class="section">
     <div class="container">
-      <p class="section__label">Current positions</p>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Post-doctoral researcher</p>
-          <p class="pub-authors">Vrije Universiteit Brussel · DFUTURE Research Centre</p>
-        </div>
-        <div class="pub-meta"><p class="pub-year">2025–present</p></div>
+      <div class="section__head">
+        <h2>Current positions</h2>
       </div>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Guest professor (10% ZAP)</p>
-          <p class="pub-authors">Universiteit Hasselt · Introduction to Political Science and Governance</p>
+      <div class="entry-list">
+        <div class="entry">
+          <div>
+            <h3 class="entry__title">Post-doctoral researcher</h3>
+            <p class="entry__sub">Vrije Universiteit Brussel · DFUTURE Research Centre</p>
+          </div>
+          <div class="entry__meta"><p>2025–present</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2025–2026</p></div>
-      </div>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Senior academic fellow</p>
-          <p class="pub-authors">Hannah Arendt Institute, Mechelen</p>
+        <div class="entry">
+          <div>
+            <h3 class="entry__title">Guest professor (10% ZAP)</h3>
+            <p class="entry__sub">Universiteit Hasselt · Introduction to Political Science and Governance</p>
+          </div>
+          <div class="entry__meta"><p>2025–2026</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2022–present</p></div>
+        <div class="entry">
+          <div>
+            <h3 class="entry__title">Senior academic fellow</h3>
+            <p class="entry__sub">Hannah Arendt Institute, Mechelen</p>
+          </div>
+          <div class="entry__meta"><p>2022–present</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -46,27 +71,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- EDUCATION -->
   <section class="section">
     <div class="container">
-      <p class="section__label">Education</p>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">PhD in Political Science</p>
-          <p class="pub-authors">Vrije Universiteit Brussel &amp; University of Warwick · EUTOPIA Co-tutelle</p>
-        </div>
-        <div class="pub-meta"><p class="pub-year">2021–2025</p></div>
+      <div class="section__head">
+        <h2>Education</h2>
       </div>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">MSc Political Sciences: European and International Governance</p>
-          <p class="pub-authors">Vrije Universiteit Brussel · Summa Cum Laude</p>
+      <div class="entry-list">
+        <div class="entry">
+          <div>
+            <h3 class="entry__title">PhD in Political Science</h3>
+            <p class="entry__sub">Vrije Universiteit Brussel &amp; University of Warwick · EUTOPIA Co-tutelle</p>
+          </div>
+          <div class="entry__meta"><p>2021–2025</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2020–2021</p></div>
-      </div>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">BSc Social Sciences (minor Political Science)</p>
-          <p class="pub-authors">Vrije Universiteit Brussel &amp; Universiteit Gent · Magna Cum Laude</p>
+        <div class="entry">
+          <div>
+            <h3 class="entry__title">MSc Political Sciences: European and International Governance</h3>
+            <p class="entry__sub">Vrije Universiteit Brussel · Summa Cum Laude</p>
+          </div>
+          <div class="entry__meta"><p>2020–2021</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2017–2020</p></div>
+        <div class="entry">
+          <div>
+            <h3 class="entry__title">BSc Social Sciences (minor Political Science)</h3>
+            <p class="entry__sub">Vrije Universiteit Brussel &amp; Universiteit Gent · Magna Cum Laude</p>
+          </div>
+          <div class="entry__meta"><p>2017–2020</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -74,53 +103,47 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- PRIZES -->
   <section class="section">
     <div class="container">
-      <p class="section__label">Prizes &amp; awards</p>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Frank Cass Prize for Best Article of 2023</p>
-          <p class="pub-authors"><em>Democratization</em> (journal)</p>
-        </div>
-        <div class="pub-meta"><p class="pub-year">2024</p></div>
+      <div class="section__head">
+        <h2>Prizes &amp; awards</h2>
       </div>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">EUTOPIA Co-tutelle PhD Scholarship</p>
-          <p class="pub-authors">EUTOPIA university alliance</p>
+      <div class="entry-list">
+        <div class="entry">
+          <div>
+            <h3 class="entry__title">Frank Cass Prize for Best Article of 2023</h3>
+            <p class="entry__sub"><em>Democratization</em> (journal)</p>
+          </div>
+          <div class="entry__meta"><p>2024</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2021</p></div>
-      </div>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Excellence Award — top student in master's programme</p>
-          <p class="pub-authors">Faculty of Economy and Social Sciences, VUB</p>
+        <div class="entry">
+          <div>
+            <h3 class="entry__title">EUTOPIA Co-tutelle PhD Scholarship</h3>
+            <p class="entry__sub">EUTOPIA university alliance</p>
+          </div>
+          <div class="entry__meta"><p>2021</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2021</p></div>
+        <div class="entry">
+          <div>
+            <h3 class="entry__title">Excellence Award — top student in master's programme</h3>
+            <p class="entry__sub">Faculty of Economy and Social Sciences, VUB</p>
+          </div>
+          <div class="entry__meta"><p>2021</p></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- AT A GLANCE -->
+  <!-- READ FURTHER -->
   <section class="section">
     <div class="container">
-      <p class="section__label">At a glance</p>
-      <div class="info-grid">
-        <div>
-          <p class="info-grid__label">Languages</p>
-          <p class="info-grid__value">Dutch (native)<br>English (proficient)</p>
-        </div>
-        <div>
-          <p class="info-grid__label">Skills</p>
-          <p class="info-grid__value">R (3+ years)<br>Survey design &amp; fielding<br>Causal inference</p>
-        </div>
-        <div>
-          <p class="info-grid__label">Peer review</p>
-          <p class="info-grid__value">Acta Politica · EJPR<br>Nature Human Behaviour<br>Social Science Quarterly</p>
-        </div>
+      <div class="section__head">
+        <h2>Publications and writing</h2>
+        <p>The full CV lists every publication, conference presentation, teaching role and professional service. The highlights are on these pages.</p>
       </div>
-      <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-top: 1.5rem;">
-        For a complete overview of publications, conference presentations, teaching experience, and professional service, please 
-        <a href="/Academic_cv_Kamil_Bernaerts.pdf" target="_blank" rel="noopener">download the full CV</a>.
-      </p>
+      <div class="grid-3">
+        <LinkCard href="/research/#publications" title="Publications" sub="Articles, book and dataset, with abstracts" />
+        <LinkCard href="/writing/" title="Essays & op-eds" sub="Writing for a wide audience" />
+        <LinkCard href="/Academic_cv_Kamil_Bernaerts.pdf" title="Full CV (PDF)" sub="Complete overview" />
+      </div>
     </div>
   </section>
 

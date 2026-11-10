@@ -8,6 +8,9 @@ venue: "Stuk Rood Vlees"
 venueUrl: "https://stukroodvlees.nl/waarom-kampen-sommige-democratieen-meer-met-polarisatie-dan-andere/"
 authors: "met Benjamin Blanckaert & Didier Caluwaerts"
 tags: ["Polarisatie", "Democratie", "Consensusdemocratie", "Politieke instellingen"]
+sortDate: "2022-10-20"
+topics: ["polarisation", "democracy", "institutions"]
+image: "/images/post1-header.jpg"
 ---
 
 Wereldwijd kreunen democratieën onder druk van polarisatie. Hoewel geen enkel land volledig immuun lijkt, bestaan er toch opmerkelijke verschillen. Zo doen Scandinavische landen het beduidend beter dan Frankrijk, de VS of het VK (zie figuur 1). In een [recente studie](https://www.tandfonline.com/doi/full/10.1080/13510347.2022.2117300) tonen wij aan dat de verschillen tussen landen tot op zekere hoogte verklaard kunnen worden door hun politieke instellingen. Dit is goed nieuws want het impliceert dat onder de 'juiste' institutionele voorwaarden democratieën polarisatie wel degelijk kunnen terugdringen.

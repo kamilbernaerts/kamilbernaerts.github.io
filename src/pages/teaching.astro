@@ -1,38 +1,63 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import LinkCard from '../components/LinkCard.astro';
 ---
 
 <BaseLayout title="Teaching" description="My teaching experience in political science, from guest lectures to thesis supervision.">
 
-  <section class="page-header">
+  <PageHeader
+    title="Teaching"
+    lead="Teaching the next generation of political scientists is one of the most rewarding parts of my work."
+  />
+
+  <!-- AT A GLANCE -->
+  <section class="section">
     <div class="container">
-      <h1>Teaching</h1>
-      <p class="lead">Teaching the next generation of political scientists is one of the most rewarding parts of my work.</p>
+      <div class="section__head">
+        <h2>At a glance</h2>
+      </div>
+      <div class="grid-3">
+        <div class="fact">
+          <p class="fact__label">Theses supervised</p>
+          <p class="fact__value">17 bachelor theses<br>7 master theses (jury)</p>
+        </div>
+        <div class="fact">
+          <p class="fact__label">Teaching roles</p>
+          <p class="fact__value">Guest professor (UHasselt)<br>Workshop supervisor (VUB)<br>Guest lecturer (VUB)</p>
+        </div>
+        <div class="fact">
+          <p class="fact__label">Topics</p>
+          <p class="fact__value">Intro to Political Science<br>Polarisation &amp; Democracy<br>Quantitative Methods</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- CURRENT + PHOTO -->
   <section class="section">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 240px; gap: 2.5rem; align-items: start;">
+      <div class="split">
         <div>
-          <p class="section__label">Current teaching (2025–2026)</p>
-          <div class="pub-item">
-            <div>
-              <p class="pub-title">Introduction to Political Science and Governance</p>
-              <p class="pub-authors">Guest professor · Universiteit Hasselt · Bachelor 1 Social Sciences</p>
-            </div>
+          <div class="section__head">
+            <h2>Current teaching (2025–2026)</h2>
           </div>
-          <div class="pub-item">
-            <div>
-              <p class="pub-title">Bachelor thesis workshop: polarisation and democracy</p>
-              <p class="pub-authors">Supervision of 3 theses · VUB Bachelor Political Science</p>
+          <div class="entry-list">
+            <div class="entry">
+              <div>
+                <h3 class="entry__title">Introduction to Political Science and Governance</h3>
+                <p class="entry__sub">Guest professor · Universiteit Hasselt · Bachelor 1 Social Sciences</p>
+              </div>
+            </div>
+            <div class="entry">
+              <div>
+                <h3 class="entry__title">Bachelor thesis workshop: polarisation and democracy</h3>
+                <p class="entry__sub">Supervision of 3 theses · VUB Bachelor Political Science</p>
+              </div>
             </div>
           </div>
         </div>
-        <div>
-          <img src="/images/teaching.jpeg" alt="Lecture at Universiteit Hasselt" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;" />
-        </div>
+        <img src="/images/teaching.jpeg" alt="Lecture at Universiteit Hasselt" class="photo" style="aspect-ratio: 4 / 5;" />
       </div>
     </div>
   </section>
@@ -40,55 +65,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- PREVIOUS -->
   <section class="section">
     <div class="container">
-      <p class="section__label">Previous teaching experience</p>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Bachelor thesis workshop: polarisation and democracy</p>
-          <p class="pub-authors">Supervision of 14 bachelor theses (2022–2025) · VUB Bachelor Political Science</p>
-        </div>
-        <div class="pub-meta"><p class="pub-year">2022–2025</p></div>
+      <div class="section__head">
+        <h2>Previous teaching experience</h2>
       </div>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Guest lecture: polarisation and democracy, a complicated relationship</p>
-          <p class="pub-authors">Bachelor's in Social Sciences · VUB · Prof. Eline Severs</p>
+      <div class="entry-list">
+        <div class="entry">
+          <div>
+            <h3 class="entry__title">Bachelor thesis workshop: polarisation and democracy</h3>
+            <p class="entry__sub">Supervision of 14 bachelor theses · VUB Bachelor Political Science</p>
+          </div>
+          <div class="entry__meta"><p>2022–2025</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2025-2026</p></div>
-      </div>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Guest lecture: exploring quantitative research methods</p>
-          <p class="pub-authors">Master's in Political Science · VUB · Prof. Vjosa Musliu</p>
+        <div class="entry">
+          <div>
+            <h3 class="entry__title">Guest lecture: polarisation and democracy, a complicated relationship</h3>
+            <p class="entry__sub">Bachelor's in Social Sciences · VUB · Prof. Eline Severs</p>
+          </div>
+          <div class="entry__meta"><p>2025–2026</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2023–2024</p></div>
-      </div>
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Guest lecture: polarisation and democracy</p>
-          <p class="pub-authors">Course: Challenges to Democracy · Master's in Political Science · VUB · Prof. Didier Caluwaerts</p>
+        <div class="entry">
+          <div>
+            <h3 class="entry__title">Guest lecture: exploring quantitative research methods</h3>
+            <p class="entry__sub">Master's in Political Science · VUB · Prof. Vjosa Musliu</p>
+          </div>
+          <div class="entry__meta"><p>2023–2024</p></div>
         </div>
-        <div class="pub-meta"><p class="pub-year">2022–2023</p></div>
+        <div class="entry">
+          <div>
+            <h3 class="entry__title">Guest lecture: polarisation and democracy</h3>
+            <p class="entry__sub">Course: Challenges to Democracy · Master's in Political Science · VUB · Prof. Didier Caluwaerts</p>
+          </div>
+          <div class="entry__meta"><p>2022–2023</p></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SUMMARY -->
+  <!-- NEXT STEPS -->
   <section class="section">
     <div class="container">
-      <p class="section__label">At a glance</p>
-      <div class="info-grid">
-        <div>
-          <p class="info-grid__label">Theses supervised</p>
-          <p class="info-grid__value" style="font-size: 1.5rem; font-weight: 500;">17 bachelor · 7 master (jury)</p>
-        </div>
-        <div>
-          <p class="info-grid__label">Teaching roles</p>
-          <p class="info-grid__value">Guest professor (UHasselt)<br>Workshop supervisor (VUB)<br>Guest lecturer (VUB)</p>
-        </div>
-        <div>
-          <p class="info-grid__label">Topics</p>
-          <p class="info-grid__value">Intro to Political Science<br>Polarisation &amp; Democracy<br>Quantitative Methods</p>
-        </div>
+      <div class="section__head">
+        <h2>For students</h2>
+      </div>
+      <div class="grid-3">
+        <LinkCard href="/research/" title="My research" sub="Background reading for a thesis on polarisation" />
+        <LinkCard href="/writing/" title="Essays & op-eds" sub="Short, accessible introductions" />
+        <LinkCard href="/contact/" title="Contact me" sub="Questions about a course or thesis" />
       </div>
     </div>
   </section>

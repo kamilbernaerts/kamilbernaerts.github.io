@@ -1,0 +1,18 @@
+---
+// One pattern for every "go somewhere else" link, internal or external.
+interface Props {
+  href: string;
+  title: string;
+  sub?: string;
+}
+const { href, title, sub } = Astro.props;
+const external = /^https?:/.test(href);
+const arrow = external ? '↗' : '→';
+---
+<a href={href} class="link-card" {...(external ? { target: '_blank', rel: 'noopener' } : {})}>
+  <span class="link-card__text">
+    <span class="link-card__title">{title}</span>
+    {sub && <span class="link-card__sub">{sub}</span>}
+  </span>
+  <span class="link-card__arrow" aria-hidden="true">{arrow}</span>
+</a>

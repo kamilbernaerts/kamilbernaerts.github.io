@@ -1,260 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import LinkCard from '../components/LinkCard.astro';
+import Publication from '../components/Publication.astro';
+import { published, workingPapers } from '../data/publications.js';
 ---
-
-<style>
-  .research-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-    padding-top: 3.5rem;
-  }
-
-  .research-sidebar-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    text-decoration: none;
-    transition: border-color 0.15s ease, background-color 0.15s ease;
-    gap: 0.75rem;
-  }
-
-  .research-sidebar-link:hover {
-    border-color: var(--color-accent);
-    background-color: var(--color-accent-light);
-    opacity: 1;
-  }
-
-  .research-sidebar-link__text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-  }
-
-  .research-sidebar-link__title {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    line-height: 1.3;
-  }
-
-  .research-sidebar-link__sub {
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
-  }
-
-  .research-sidebar-link__arrow {
-    font-size: 0.875rem;
-    color: var(--color-text-faint);
-    flex-shrink: 0;
-    transition: color 0.15s ease, transform 0.15s ease;
-  }
-
-  .research-sidebar-link:hover .research-sidebar-link__arrow {
-    color: var(--color-accent);
-    transform: translateX(2px);
-  }
-
-  .research-header-figure {
-    margin-top: 1.75rem;
-  }
-
-  @media (max-width: 768px) {
-    .research-sidebar {
-      padding-top: 0.25rem;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-
-    .research-sidebar-link {
-      flex: 1 1 calc(50% - 0.3125rem);
-      min-width: 140px;
-    }
-
-    .research-header-figure {
-      margin-top: 1.25rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .research-sidebar {
-      flex-direction: column;
-    }
-
-    .research-sidebar-link {
-      flex: none;
-      width: 100%;
-    }
-  }
-</style>
 
 <BaseLayout title="Research" description="My research explores how different forms of polarisation relate to democratic health.">
 
-  <section class="page-header">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 240px; gap: 2rem; align-items: start;">
-        <div>
-          <h1>Research</h1>
-          <p class="intro" style="text-align: justify;">My research is driven by a simple, yet challenging question: <strong>when does conflict become a threat to democracy?</strong> Our societies are (re)polarising (see below), and the most common reaction is to see that as inherently dangerous. My work, instead, is built on the conviction that understanding this distinction — between the conflict that democracies need and the conflict that destroys them — is one of the most urgent tasks for political science today. In doing so, I have developed a strong interest in studying different sorts of polarisation, and the broader socio-institutional framework within which it erupts.</p>
-        </div>
-        <div class="research-sidebar">
-          <a href="https://scholar.google.com/citations?user=7Pmo70UAAAAJ&hl=en" target="_blank" rel="noopener" class="research-sidebar-link">
-            <span class="research-sidebar-link__text">
-              <span class="research-sidebar-link__title">Google Scholar</span>
-              <span class="research-sidebar-link__sub">Full publication metrics</span>
-            </span>
-            <span class="research-sidebar-link__arrow">→</span>
-          </a>
-          <a href="https://researchportal.vub.be/en/persons/kamil-bernaerts" target="_blank" rel="noopener" class="research-sidebar-link">
-            <span class="research-sidebar-link__text">
-              <span class="research-sidebar-link__title">VUB Research Portal</span>
-              <span class="research-sidebar-link__sub">Institutional profile</span>
-            </span>
-            <span class="research-sidebar-link__arrow">→</span>
-          </a>
-        </div>
-      </div>
-      <div class="research-header-figure">
-        <figure style="display: flex; flex-direction: column; align-items: center; margin: 0;">
-          <img src="/images/polarisation-vdem.png" alt="Figure depicting the global rise of polarisation according to V-Dem data" style="width: 100%; max-width: 800px; border-radius: 4px;" />
-          <figcaption style="font-size: 0.75rem; color: var(--color-text-faint); margin-top: 0.5rem; text-align: center;">
-            Global increase in idea-based and identity-based polarisation. Source: V-Dem (2026).
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- RESEARCH THEMES -->
-  <section class="section">
-    <div class="container">
-      <p class="section__label">Research themes</p>
-      <div class="project-grid">
-        <div class="project-card">
-          <p class="project-card__label">Kinds of polarisation and democracy</p>
-          <p class="project-card__desc">How do different kinds of polarisation relate to democratic behavior?</p>
-        </div>
-        <div class="project-card">
-          <p class="project-card__label">Institutions and polarisation</p>
-          <p class="project-card__desc">How do democratic institutions shape polarisation dynamics and their consequences?</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <PageHeader
+    title="Research"
+    lead="My research is driven by a simple, yet challenging question: when does conflict become a threat to democracy?"
+  />
 
   <!-- PUBLISHED -->
-  <section class="section">
+  <section class="section" id="publications">
     <div class="container">
-      <p class="section__label">Published &amp; accepted articles and books</p>
-
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Polarising alone? The relationship between social contact and affective polarisation in Belgium and the UK</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong> &amp; Junius, N.</p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">Acta Politica</p>
-          <p class="pub-year">2026 · <span class="oa-badge oa-green" title="Green Open Access — accepted author manuscript available">Green OA</span> · <a href="https://link.springer.com/article/10.1057/s41269-026-00457-2" target="_blank" rel="noopener" class="pub-link">published ↗</a> · <a href="https://researchportal.vub.be/en/publications/polarising-alone-the-relationship-between-social-contact-and-affe/" target="_blank" rel="noopener" class="pub-link">AAM ↗</a></p>
-        </div>
-      </div> 
-      
-      <!-- Frontiers: published -->
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Hate, not dislike? Understanding anti-democratic attitudes through a multi-dimensional understanding of affective polarization</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong></p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">Frontiers in Political Science</p>
-          <p class="pub-year">2026 · <span class="oa-badge oa-gold" title="Gold Open Access — freely available via publisher">Gold OA</span> · <a href="https://www.frontiersin.org/journals/political-science/articles/10.3389/fpos.2026.1910557/full" target="_blank" rel="noopener" class="pub-link">published ↗</a></p>
-        </div>
+      <div class="section__head">
+        <h2>Published &amp; accepted articles and books</h2>
+        <p>
+          Also on
+          <a href="https://scholar.google.com/citations?user=7Pmo70UAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a>,
+          the <a href="https://researchportal.vub.be/en/persons/kamil-bernaerts" target="_blank" rel="noopener">VUB Research Portal ↗</a>
+          and <a href="https://orcid.org/0000-0002-3380-6639" target="_blank" rel="noopener">ORCID ↗</a>.
+        </p>
       </div>
-
-      <!-- PSR: published -->
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Affect or emotions? Disaggregating affective polarisation to explain support for liberal democracy in Belgium and the United Kingdom</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong></p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">Political Studies Review</p>
-          <p class="pub-year">2026 · <span class="oa-badge oa-green" title="Green Open Access — accepted author manuscript available">Green OA</span> · <a href="https://journals.sagepub.com/doi/epub/10.1177/14789299261438223" target="_blank" rel="noopener" class="pub-link">published ↗</a> · <a href="https://researchportal.vub.be/en/publications/affect-or-emotions-disaggregating-affective-polarisation-to-expla/" target="_blank" rel="noopener" class="pub-link">AAM ↗</a></p>
-        </div>
-      </div>
-
-      <!-- PLC Summary: diamond OA, one link -->
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Summary: Friends or foes, does polarisation really undermine democracy? Understanding the two-way relationship between polarisation dynamics and the processes and institutions of democratic contestation</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong></p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">Politics of the Low Countries</p>
-          <p class="pub-year">2026 · <span class="oa-badge oa-diamond" title="Diamond Open Access — freely available to read and download">Diamond OA</span> · <a href="https://plc-journal.eu/article/view/25310" target="_blank" rel="noopener" class="pub-link">published ↗</a></p>
-        </div>
-      </div>
-
-    <!-- Dataset: no OA classification -->
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">[Dataset] State of the Unions: survey experiment on various forms of polarisation and democratic consequences in Belgium and the UK</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong>; <a href="https://scholar.google.com/citations?hl=en&user=Eyhy4K4AAAAJ" target="_blank" rel="noopener">Caluwaerts, D.</a></p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">VUB Institutional Data Repository</p>
-          <p class="pub-year">2026 · <a href="https://researchportal.vub.be/en/datasets/state-of-the-unions-survey-experiment-on-various-forms-of-polaris/" target="_blank" rel="noopener" class="pub-link">published ↗</a></p>
-        </div>
-      </div>
-
-      <!-- VUBPRESS book: no OA classification -->
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Friends or foes: does polarisation really undermine democracy? Understanding the two-way relationship between polarisation dynamics and the processes and institutions of democratic contestation</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong></p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">VUBPRESS</p>
-          <p class="pub-year">2025 (book)</p>
-        </div>
-      </div>
-
-      <!-- IPSR: green OA, published + AAM -->
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Fight or unite? Exploring the link between consensus institutions, polarization and political violence in 113 democracies over time (1900–2023)</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong> &amp; <a href="https://scholar.google.com/citations?hl=en&user=Eyhy4K4AAAAJ" target="_blank" rel="noopener">Caluwaerts, D.</a></p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">International Political Science Review</p>
-          <p class="pub-year">2025 · <span class="oa-badge oa-green" title="Green Open Access — accepted author manuscript available">Green OA</span> · <a href="https://journals.sagepub.com/doi/10.1177/01925121251355894" target="_blank" rel="noopener" class="pub-link">published ↗</a> · <a href="https://researchportal.vub.be/en/publications/fight-or-unite-exploring-the-link-between-consensus-institutions-/" target="_blank" rel="noopener" class="pub-link">AAM ↗</a></p>
-        </div>
-      </div>
-
-      <!-- Democratization: gold OA, one link -->
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Institutional design and polarization. Do consensus democracies fare better in fighting polarization than majoritarian democracies?</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong>, <a href="https://scholar.google.com/citations?user=VhNtu44AAAAJ&hl=nl" target="_blank" rel="noopener">Blanckaert, B.</a>; <a href="https://scholar.google.com/citations?hl=en&user=Eyhy4K4AAAAJ" target="_blank" rel="noopener">Caluwaerts, D.</a></p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">Democratization</p>
-          <p class="pub-year">2023 · <span class="oa-badge oa-gold" title="Gold Open Access — freely available via publisher">Gold OA</span> · <a href="https://www.tandfonline.com/doi/full/10.1080/13510347.2022.2117300" target="_blank" rel="noopener" class="pub-link">published ↗</a></p>
-        </div>
-      </div>
-
-      <!-- Frontiers: gold OA, one link -->
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Deliberation and polarization: a multi-disciplinary review</p>
-          <p class="pub-authors"><a href="https://scholar.google.com/citations?hl=en&user=Eyhy4K4AAAAJ" target="_blank" rel="noopener">Caluwaerts, D.</a>, <strong>Bernaerts, K.</strong>, <a href="https://scholar.google.com/citations?hl=en&user=mMw8rIQAAAAJ" target="_blank" rel="noopener">Kesberg, R.</a>, <a href="https://scholar.google.com/citations?hl=en&user=iRXtVgEAAAAJ" target="_blank" rel="noopener">Smets, L.</a>; <a href="https://scholar.google.com/citations?hl=en&user=Y0dfefMAAAAJ" target="_blank" rel="noopener">Spruyt, B.</a></p>
-        </div>
-        <div class="pub-meta">
-          <p class="pub-journal">Frontiers in Political Science</p>
-          <p class="pub-year">2023 · <span class="oa-badge oa-gold" title="Gold Open Access — freely available via publisher">Gold OA</span> · <a href="https://www.frontiersin.org/journals/political-science/articles/10.3389/fpos.2023.1127372/" target="_blank" rel="noopener" class="pub-link">published ↗</a></p>
-        </div>
+      <div class="entry-list">
+        {published.map((pub) => <Publication pub={pub} />)}
       </div>
     </div>
   </section>
@@ -262,30 +34,57 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- WORKING PAPERS -->
   <section class="section">
     <div class="container">
-      <p class="section__label">Under review &amp; working papers</p>
+      <div class="section__head">
+        <h2>Under review &amp; working papers</h2>
+      </div>
+      <div class="entry-list">
+        {workingPapers.map((pub) => <Publication pub={pub} />)}
+      </div>
+    </div>
+  </section>
 
-      <!-- Working paper: no link -->
-      <div class="pub-item">
-        <div>
-          <p class="pub-title">Beyond the culture wars? Assessing the socio-economic determinants of affective polarization</p>
-          <p class="pub-authors"><strong>Bernaerts, K.</strong>, <a href="https://scholar.google.com/citations?hl=en&user=iyrtL4gAAAAJ" target="_blank" rel="noopener">Matthieu, J.</a>, <a href="https://scholar.google.com/citations?user=kJq4HeoAAAAJ&hl=en" target="_blank" rel="noopener">Junius, N.</a>; <a href="https://scholar.google.com/citations?hl=en&user=Eyhy4K4AAAAJ" target="_blank" rel="noopener">Caluwaerts, D.</a></p>
+  <!-- BACKGROUND + THEMES -->
+  <section class="section">
+    <div class="container">
+      <div class="split split--even">
+        <div class="prose">
+          <h2>Conflict and democracy</h2>
+          <p>Our societies are (re)polarising, and the most common reaction is to see that as inherently dangerous. My work is built on the conviction that understanding the distinction between the conflict that democracies need and the conflict that destroys them is one of the most urgent tasks for political science today.</p>
+          <p>In doing so, I have developed a strong interest in studying different sorts of polarisation, and the broader socio-institutional framework within which it erupts.</p>
         </div>
-        <div class="pub-meta">
-          <p class="pub-journal"></p>
-          <p class="pub-year">Working paper</p>
+        <div>
+          <h2>Research themes</h2>
+          <div class="card">
+            <h4>Kinds of polarisation and democracy</h4>
+            <p>How do different kinds of polarisation relate to democratic behavior?</p>
+          </div>
+          <div class="card" style="margin-top: 0.9rem;">
+            <h4>Institutions and polarisation</h4>
+            <p>How do democratic institutions shape polarisation dynamics and their consequences?</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PHOTO + NEXT STEPS -->
   <section class="section">
     <div class="container">
-      <figure style="display: flex; flex-direction: column; align-items: center; margin: 0;">
-        <img src="/images/conference.png" alt="Presentation at ECPR General Conference 2022" style="width: 100%; max-width: 800px; border-radius: 4px;" />
-        <figcaption style="font-size: 0.75rem; color: var(--color-text-faint); margin-top: 0.5rem; text-align: center;">
-          Presentation at ECPR General Conference 2022.
-        </figcaption>
-      </figure>
+      <div class="split split--even">
+        <figure class="figure">
+          <img src="/images/conference.png" alt="Presentation at ECPR General Conference 2022" />
+          <figcaption>Presentation at ECPR General Conference 2022.</figcaption>
+        </figure>
+        <div>
+          <h2>Further reading</h2>
+          <div class="stack">
+            <LinkCard href="/phd/" title="PhD research" sub="Dissertation and book" />
+            <LinkCard href="/writing/" title="Essays & op-eds" sub="The same research, written for a wide audience" />
+            <LinkCard href="/cv/" title="Curriculum vitae" sub="Positions, education and awards" />
+            <LinkCard href="/contact/" title="Collaborate" sub="Get in touch about research projects and papers" />
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

@@ -6,6 +6,8 @@ date: "26 maart 2026"
 lang: "NL"
 tags: ["Democratie", "Autocratisering", "V-Dem", "Verenigde Staten", "Liberale democratie"]
 image: "/images/vdem-1-og.jpg"
+sortDate: "2026-03-26"
+topics: ["democracy", "autocratisation"]
 ---
 
 De democratische erosie die zich voor onze ogen ontvouwt in de Verenigde Staten onder president Trump is dramatisch in zowel stijl als omvang — maar het is helaas geen uniek geval. Als politicologen zijn we ondertussen grotendeels overtuigd dat de democratie wereldwijd in de verdrukking komt. We bevinden ons, kortom, midden in een [derde golf van autocratisering](https://www.tandfonline.com/doi/full/10.1080/13510347.2019.1582029). Om te meten hoe wijdverspreid en steil deze golf is, vertrouwen de meeste onderzoekers op de breed vertrouwde V-Dem-dataset. [V-Dem](https://www.v-dem.net) is een onderzoekscentrum verbonden aan de Universiteit van Göteborg in Zweden, dat macro-niveau data verzamelt via expertbevragingen over een uitgebreide batterij van democratie-gerelateerde indicatoren. Op 17 maart publiceerden ze hun [jaarlijks rapport over de wereldwijde staat van de democratie](https://www.v-dem.net/news/press-release-democratic-backsliding-reaches-western-democracies-with-us-decline-unprecedented/) samen met de 2025-update van hun publiek beschikbare dataset. De bevindingen zijn, zonder overdrijving, dramatisch. De derde golf van autocratisering zwakt nog niet af — integendeel. De mondiale staat van de democratie is teruggevallen naar het niveau van 1978 terwijl een ongekend aantal landen autocratiseert. De golf, ondertussen uitgegroeid tot een tsnunami, heeft elke regio van de wereld bereikt. Het voortbestaan van de wereldwijde democratie is ernstig in gevaar. 
@@ -50,9 +52,9 @@ Als we iets verder teruggaan in de geschiedenis, is het geruststellend dat we mo
   <figcaption>Aandeel van de wereldbevolking in democratiserings- en autocratiseringsperioden doorheen de tijd (V-Dem).</figcaption>
 </figure>
 
-<div style="background: var(--color-accent-light); border: 1px solid var(--color-border); border-left: 3px solid var(--color-accent); border-radius: 6px; padding: 1.25rem 1.5rem; margin: 2rem 0;">
-  <p style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--color-accent); font-weight: 600; margin-bottom: 0.5rem;">Methodologie</p>
-  <p style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 0;">Om deze indicatoren empirisch te meten en te construeren, maakt V-Dem gebruik van een specifieke methodologie. Omdat de variabelen in kwestie — kwaliteit van de liberale democratie, electorale integriteit, persvrijheid, enzovoort — wetenschappelijke concepten zijn in plaats van rechtstreeks waarneembare verschijnselen, kunnen ze niet op een eenvoudige manier worden gemeten. V-Dem doet daarom beroep op meer dan 4.500 landenexperts die hun beoordelingen op al deze dimensies geven. Via een <a href="https://www.v-dem.net/about/v-dem-project/methodology/">geavanceerde techniek om individuele vertekeningen te minimaliseren</a> worden deze beoordelingen vervolgens samengevoegd tot schaalbare land-jaar data (bv. België in 2025).</p>
+<div class="post-box">
+  <p class="post-box__title">Methodologie</p>
+  <p>Om deze indicatoren empirisch te meten en te construeren, maakt V-Dem gebruik van een specifieke methodologie. Omdat de variabelen in kwestie — kwaliteit van de liberale democratie, electorale integriteit, persvrijheid, enzovoort — wetenschappelijke concepten zijn in plaats van rechtstreeks waarneembare verschijnselen, kunnen ze niet op een eenvoudige manier worden gemeten. V-Dem doet daarom beroep op meer dan 4.500 landenexperts die hun beoordelingen op al deze dimensies geven. Via een <a href="https://www.v-dem.net/about/v-dem-project/methodology/">geavanceerde techniek om individuele vertekeningen te minimaliseren</a> worden deze beoordelingen vervolgens samengevoegd tot schaalbare land-jaar data (bv. België in 2025).</p>
 </div>
 
 ## Welke aspecten van de democratie staan onder druk?

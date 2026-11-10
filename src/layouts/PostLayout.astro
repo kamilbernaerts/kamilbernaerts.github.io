@@ -5,7 +5,7 @@ const { title, description, date, lang, venue, venueUrl, authors, tags, image } 
 import BaseLayout from './BaseLayout.astro';
 ---
 
-<BaseLayout title={title} description={description} image={image}>
+<BaseLayout title={title} description={description} image={image} lang={lang ? lang.toLowerCase() : undefined}>
 
   <section class="page-header post-header">
     <div class="container--narrow">

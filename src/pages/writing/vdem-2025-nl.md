@@ -50,9 +50,9 @@ Als we iets verder teruggaan in de geschiedenis, is het geruststellend dat we mo
   <figcaption>Aandeel van de wereldbevolking in democratiserings- en autocratiseringsperioden doorheen de tijd (V-Dem).</figcaption>
 </figure>
 
-<div style="background: var(--color-accent-light); border: 1px solid var(--color-border); border-left: 3px solid var(--color-accent); border-radius: 6px; padding: 1.25rem 1.5rem; margin: 2rem 0;">
-  <p style="font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--color-accent); font-weight: 600; margin-bottom: 0.5rem;">Methodologie</p>
-  <p style="font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 0;">Om deze indicatoren empirisch te meten en te construeren, maakt V-Dem gebruik van een specifieke methodologie. Omdat de variabelen in kwestie — kwaliteit van de liberale democratie, electorale integriteit, persvrijheid, enzovoort — wetenschappelijke concepten zijn in plaats van rechtstreeks waarneembare verschijnselen, kunnen ze niet op een eenvoudige manier worden gemeten. V-Dem doet daarom beroep op meer dan 4.500 landenexperts die hun beoordelingen op al deze dimensies geven. Via een <a href="https://www.v-dem.net/about/v-dem-project/methodology/">geavanceerde techniek om individuele vertekeningen te minimaliseren</a> worden deze beoordelingen vervolgens samengevoegd tot schaalbare land-jaar data (bv. België in 2025).</p>
+<div class="post-box">
+  <p class="post-box__title">Methodologie</p>
+  <p>Om deze indicatoren empirisch te meten en te construeren, maakt V-Dem gebruik van een specifieke methodologie. Omdat de variabelen in kwestie — kwaliteit van de liberale democratie, electorale integriteit, persvrijheid, enzovoort — wetenschappelijke concepten zijn in plaats van rechtstreeks waarneembare verschijnselen, kunnen ze niet op een eenvoudige manier worden gemeten. V-Dem doet daarom beroep op meer dan 4.500 landenexperts die hun beoordelingen op al deze dimensies geven. Via een <a href="https://www.v-dem.net/about/v-dem-project/methodology/">geavanceerde techniek om individuele vertekeningen te minimaliseren</a> worden deze beoordelingen vervolgens samengevoegd tot schaalbare land-jaar data (bv. België in 2025).</p>
 </div>
 
 ## Welke aspecten van de democratie staan onder druk?

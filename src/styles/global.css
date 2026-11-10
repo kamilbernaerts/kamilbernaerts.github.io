@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DESIGN SYSTEM — kamilbernaerts.com ("Polarized Times")
+   DESIGN SYSTEM — kamilbernaerts.com ("Polarised Times")
    Layout: a printed newspaper. A masthead between rules, headlines in a
    display serif, body text in a text serif, and sections separated by
    rules instead of boxes or colour. Ink on paper; colour comes only from
@@ -189,7 +189,7 @@ p:last-child { margin-bottom: 0; }
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   gap: 1rem;
-  align-items: baseline;
+  align-items: center;
   font-size: var(--text-sm);
   font-style: italic;
   color: var(--ink-soft);
@@ -202,9 +202,11 @@ p:last-child { margin-bottom: 0; }
 .dateline > :last-child { text-align: right; }
 
 .dateline__name {
-  font-size: 1.0625rem;
+  font-family: var(--font-display);
+  font-size: 1.625rem;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
+  line-height: 1.2;
   color: var(--ink);
 }
 
@@ -241,6 +243,48 @@ p:last-child { margin-bottom: 0; }
   gap: 0.75rem;
   margin-top: 1.25rem;
 }
+
+/* ===== ROLES BANNER — the teaser strip at the top of the front page ===== */
+.promo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--rule);
+}
+
+.promo__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  padding: 1rem 1.5rem;
+  border-left: 1px solid var(--rule-soft);
+  text-decoration: none;
+}
+
+.promo__item:first-child { border-left: none; padding-left: 0; }
+.promo__item:last-child { padding-right: 0; }
+
+.promo__role {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 1.2;
+}
+
+.promo__text { font-size: 1rem; line-height: 1.45; color: var(--ink-soft); }
+
+.promo__go {
+  font-size: var(--text-sm);
+  font-style: italic;
+  margin-top: auto;
+  padding-top: 0.25rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: var(--ink-faint);
+}
+
+.promo__item:hover .promo__go { text-decoration-color: var(--ink); text-decoration-thickness: 2px; }
 
 /* ===== FRONT PAGE (home) ===== */
 .front {
@@ -767,6 +811,11 @@ main > .section:last-child > .container--narrow { border-bottom: none; }
   .entry-list--cols { grid-template-columns: 1fr; }
 
   .split { gap: 1.5rem; }
+
+  .promo { grid-template-columns: 1fr; }
+  .promo__item { padding: 0.75rem 0; border-left: none; border-top: 1px solid var(--rule-soft); }
+  .promo__item:first-child { border-top: none; }
+  .dateline__name { font-size: 1.5rem; }
 
   .front__story figure { max-width: 320px; }
 

@@ -6,7 +6,10 @@
 //   oa:        'gold' | 'green' | 'diamond' (leave out if not applicable)
 //   url:       link to the published version
 //   aam:       link to the accepted author manuscript (optional)
-//   abstract:  shown as a fold-out under the title (optional)
+//   abstract:  paste the abstract between the two backticks: abstract: `...`
+//              It then appears as a fold-out under the title. Leave the
+//              backticks empty (``) and no fold-out is shown. For several
+//              paragraphs, leave a blank line between them.
 //   featured:  true = also shown on the Home page
 // ════════════════════════════════════════════════════════════════════════
 
@@ -19,8 +22,6 @@ const kesberg = '<a href="https://scholar.google.com/citations?hl=en&user=mMw8rI
 const smets = '<a href="https://scholar.google.com/citations?hl=en&user=iRXtVgEAAAAJ" target="_blank" rel="noopener">Smets, L.</a>';
 const spruyt = '<a href="https://scholar.google.com/citations?hl=en&user=Y0dfefMAAAAJ" target="_blank" rel="noopener">Spruyt, B.</a>';
 
-// PLACEHOLDER — replace with the official abstract of each article.
-const ABSTRACT_TODO = '<p><em>[Placeholder: the official abstract of this article goes here.]</em></p>';
 
 const dissertationAbstract = `
 <p>The relationship between political polarisation and democracy has become a central concern in political science, yet the nature of this connection remains contested. This dissertation addresses the puzzle by arguing that to understand the democratic implications of polarisation, we must distinguish between different types of polarisation and different types of democratic institutional design. Drawing on a survey experiment in Belgium and the UK, and cross-national data from over 100 countries globally, my dissertation reveals that not all polarisation is equally detrimental. Affective polarisation measured as dislike toward political parties shows little to no negative relationship with democratic attitudes. A more significant concern emerges when polarisation is rooted in societal conflicts such as "wokeness". When divisions manifest as social distance and negative emotions — such as anger or hate — they correlate strongly with increased political intolerance and support for political violence and lower commitment to liberal democracy.</p>
@@ -35,7 +36,7 @@ export const published = [
     oa: 'green',
     url: 'https://link.springer.com/article/10.1057/s41269-026-00457-2',
     aam: 'https://researchportal.vub.be/en/publications/polarising-alone-the-relationship-between-social-contact-and-affe/',
-    abstract: ABSTRACT_TODO,
+    abstract: ``,
     featured: true,
   },
   {
@@ -45,7 +46,7 @@ export const published = [
     year: '2026',
     oa: 'gold',
     url: 'https://www.frontiersin.org/journals/political-science/articles/10.3389/fpos.2026.1910557/full',
-    abstract: ABSTRACT_TODO,
+    abstract: ``,
     featured: true,
   },
   {
@@ -56,7 +57,7 @@ export const published = [
     oa: 'green',
     url: 'https://journals.sagepub.com/doi/epub/10.1177/14789299261438223',
     aam: 'https://researchportal.vub.be/en/publications/affect-or-emotions-disaggregating-affective-polarisation-to-expla/',
-    abstract: ABSTRACT_TODO,
+    abstract: ``,
   },
   {
     title: 'Summary: Friends or foes, does polarisation really undermine democracy? Understanding the two-way relationship between polarisation dynamics and the processes and institutions of democratic contestation',
@@ -88,7 +89,7 @@ export const published = [
     oa: 'green',
     url: 'https://journals.sagepub.com/doi/10.1177/01925121251355894',
     aam: 'https://researchportal.vub.be/en/publications/fight-or-unite-exploring-the-link-between-consensus-institutions-/',
-    abstract: ABSTRACT_TODO,
+    abstract: ``,
     featured: true,
   },
   {
@@ -98,7 +99,7 @@ export const published = [
     year: '2023',
     oa: 'gold',
     url: 'https://www.tandfonline.com/doi/full/10.1080/13510347.2022.2117300',
-    abstract: ABSTRACT_TODO,
+    abstract: ``,
     featured: true,
   },
   {
@@ -108,7 +109,7 @@ export const published = [
     year: '2023',
     oa: 'gold',
     url: 'https://www.frontiersin.org/journals/political-science/articles/10.3389/fpos.2023.1127372/',
-    abstract: ABSTRACT_TODO,
+    abstract: ``,
   },
 ];
 

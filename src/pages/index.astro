@@ -6,6 +6,29 @@ import { featured } from '../data/publications.js';
 
 <BaseLayout title="Home" description="Political scientist at Vrije Universiteit Brussel, studying the fascinating relationship between conflict and democracy.">
 
+  <!-- ROLES BANNER: the three things I do, each linking to its page -->
+  <section aria-label="What I do">
+    <div class="container">
+      <div class="promo">
+        <a href="/research/" class="promo__item">
+          <span class="promo__role">Researcher</span>
+          <span class="promo__text">How different kinds of polarisation relate to democracy, and how institutions shape them.</span>
+          <span class="promo__go">Research and publications →</span>
+        </a>
+        <a href="/outreach/" class="promo__item">
+          <span class="promo__role">Speaker</span>
+          <span class="promo__text">Lectures, workshops and panel contributions on polarisation and democracy, in Dutch and English.</span>
+          <span class="promo__go">Lectures and media →</span>
+        </a>
+        <a href="/teaching/" class="promo__item">
+          <span class="promo__role">Lecturer</span>
+          <span class="promo__text">Introduction to Political Science and Governance at UHasselt, and thesis supervision at VUB.</span>
+          <span class="promo__go">Teaching →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- FRONT PAGE: lead story + colophon -->
   <section>
     <div class="container">
@@ -52,32 +75,6 @@ import { featured } from '../data/publications.js';
             <a href="/phd/" class="more-link" style="margin-top: 0.4rem;">About my PhD →</a>
           </div>
         </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- THE THREE ROLES -->
-  <section class="section">
-    <div class="container">
-      <div class="section__head">
-        <h2>What I do</h2>
-      </div>
-      <div class="grid-3">
-        <div class="fact">
-          <h3>Researcher</h3>
-          <p>I study how different kinds of polarisation relate to democracy, and how democratic institutions shape polarisation and its consequences.</p>
-          <a href="/research/" class="more-link" style="margin-top: 0.4rem;">Research and publications →</a>
-        </div>
-        <div class="fact">
-          <h3>Speaker</h3>
-          <p>I give lectures, workshops and panel contributions on polarisation and democracy, in Dutch and English, for audiences from schools to local governments.</p>
-          <a href="/outreach/" class="more-link" style="margin-top: 0.4rem;">Lectures and media →</a>
-        </div>
-        <div class="fact">
-          <h3>Lecturer</h3>
-          <p>I teach Introduction to Political Science and Governance at UHasselt and supervise bachelor theses on polarisation and democracy at VUB.</p>
-          <a href="/teaching/" class="more-link" style="margin-top: 0.4rem;">Teaching →</a>
-        </div>
       </div>
     </div>
   </section>

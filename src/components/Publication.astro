@@ -6,6 +6,12 @@ const oa = {
   green: { label: 'Green OA', title: 'Green Open Access — accepted author manuscript available' },
   diamond: { label: 'Diamond OA', title: 'Diamond Open Access — freely available to read and download' },
 }[pub.oa];
+
+// Plain text becomes paragraphs (blank line = new paragraph); HTML is used as it is.
+const raw = (pub.abstract || '').trim();
+const abstract = raw.startsWith('<')
+  ? raw
+  : raw.split(/\n\s*\n/).filter(Boolean).map((p) => `<p>${p.trim()}</p>`).join('');
 ---
 <article class="entry">
   <div>
@@ -21,10 +27,10 @@ const oa = {
       {pub.aam && <> · <a href={pub.aam} target="_blank" rel="noopener">AAM ↗</a></>}
     </p>
   </div>
-  {pub.abstract && (
+  {abstract && (
     <details class="abstract entry__full">
       <summary>Abstract</summary>
-      <div class="abstract__body" set:html={pub.abstract} />
+      <div class="abstract__body" set:html={abstract} />
     </details>
   )}
 </article>

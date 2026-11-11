@@ -248,36 +248,41 @@ p:last-child { margin-bottom: 0; }
 .promo {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: var(--accent-tint);
   border-bottom: 1px solid var(--rule);
 }
 
 .promo__item {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
   min-width: 0;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   border-left: 1px solid var(--rule-soft);
   text-decoration: none;
 }
 
 .promo__item:first-child { border-left: none; }
 
+.promo__img {
+  width: 42px;
+  height: 31px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 1px solid var(--ink);
+}
+
 .promo__role {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.375rem;
-  line-height: 1.2;
+  font-size: 1.625rem;
+  line-height: 1.15;
 }
-
-.promo__text { font-size: 1rem; line-height: 1.45; color: var(--ink-soft); }
 
 .promo__go {
   font-size: var(--text-sm);
   font-style: italic;
-  margin-top: auto;
-  padding-top: 0.25rem;
+  white-space: nowrap;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
@@ -285,6 +290,11 @@ p:last-child { margin-bottom: 0; }
 }
 
 .promo__item:hover .promo__go { text-decoration-color: var(--ink); text-decoration-thickness: 2px; }
+
+/* On mid-width screens the role alone fits on the line */
+@media (max-width: 900px) and (min-width: 701px) {
+  .promo__go { display: none; }
+}
 
 /* ===== FRONT PAGE (home) ===== */
 .front {
@@ -925,7 +935,7 @@ main > .section:last-child > .container--narrow { border-bottom: none; }
   .paper-grid > .story:first-child { padding-top: 0; border-top: none; }
   .paper-grid { row-gap: 1.5rem; }
   .story__text { text-align: left; hyphens: manual; }
-  .promo__item { padding: 0.75rem 1rem; border-left: none; border-top: 1px solid var(--rule-soft); }
+  .promo__item { justify-content: flex-start; padding: 0.6rem 0; border-left: none; border-top: 1px solid var(--rule-soft); }
   .promo__item:first-child { border-top: none; }
   .masthead__sub { font-size: 1.25rem; }
 

@@ -18,8 +18,8 @@ export const text = {
 
     aboutTitle: 'What I bring',
     about: [
-      'Polarisation is a word everyone uses, but few people mean the same thing by it. In my talks I explain what political science knows about it: which kinds of polarisation threaten democracy, which kinds democracies need, and what institutions and citizens can do.',
-      'I speak for a wide range of audiences: trade unions, local governments, civil society organisations, schools, media professionals, corporate teams, and the general public. Every talk is tailored to the audience and grounded in the latest research.',
+      'Polarisation is a word everyone uses, but few people mean the same thing by it. In my talks I explain the latest insights grounded in political sicence: which kinds of polarisation threaten democracy, which kinds of polarisation democracies need, and what institutions and citizens can do.',
+      'I speak for a wide range of audiences: trade unions, local governments, civil society organisations, schools, media professionals, corporate teams, and the general public. Every talk is tailored to the audience and grounded in both my research and the current state of the art.',
     ],
     facts: [
       ['Experience', 'More than 35 public presentations since 2022, in schools, at public events and in public debates'],
@@ -73,16 +73,16 @@ export const text = {
 
   nl: {
     pageTitle: 'Lezingen',
-    description: 'Lezingen, workshops en panelbijdragen over polarisatie en democratie door dr. Kamil Bernaerts, in het Nederlands en het Engels.',
-    lead: 'Lezingen, workshops en panelbijdragen over polarisatie en democratie, gebaseerd op mijn eigen onderzoek. In het Nederlands en het Engels.',
+    description: 'Lezingen, workshops en panelgesprekken over polarisatie en democratie door dr. Kamil Bernaerts, in het Nederlands en het Engels.',
+    lead: 'Lezingen, workshops en panelgesprekken over polarisatie en democratie, gebaseerd op mijn eigen onderzoek. In het Nederlands en het Engels.',
     book: 'Boek een lezing',
     switchLabel: 'English',
     switchHref: '/public-speaking/',
 
     aboutTitle: 'Wat ik breng',
     about: [
-      'Polarisatie is een woord dat iedereen gebruikt, maar waar weinig mensen hetzelfde mee bedoelen. In mijn lezingen leg ik uit wat de politieke wetenschap erover weet: welke vormen van polarisatie de democratie bedreigen, welke vormen een democratie net nodig heeft, en wat instellingen en burgers kunnen doen.',
-      'Ik spreek voor een breed publiek: vakbonden, lokale besturen, middenveldorganisaties, scholen, mediaprofessionals, bedrijven en het grote publiek. Elke lezing is afgestemd op het publiek en gebaseerd op het meest recente onderzoek.',
+      'Polarisatie is alomtegenwoordig in de media en het publieke debat, maar tegelijk is het vaak niet helemaal duidelijk wat er precies mee wordt bedoeld en welke effecten het precies heeft. In mijn lezingen zet ik een stap terug en verken ik de vraag of polarisatie wel degelijk een probleem is voor democratie: welke vormen van polarisatie bedreigen de democratie, welke vormen van polarisatie heeft een democratie net nodig, en wat kunnen instellingen en burgers doen om de schadelijke effecten te counteren?',
+      'Ik spreek graag voor een breed publiek: vakbonden, lokale besturen, middenveldorganisaties, scholen, mediaprofessionals, bedrijven en eenieder die een gezonde dosis interesse heeft in het onderwerp. Elke lezing is afgestemd op het publiek en gebaseerd op zowel mijn onderzoek als de huidige state of the art.',
     ],
     facts: [
       ['Ervaring', 'Meer dan 35 publiekspresentaties sinds 2022, in scholen, op publieke evenementen en in publieke debatten'],
@@ -93,8 +93,8 @@ export const text = {
 
     topicsTitle: 'Onderwerpen',
     topics: [
-      ['Polarisatie & democratie', 'Ondermijnt polarisatie echt de democratie? Wat zegt het onderzoek, en wat kunnen we eraan doen?'],
-      ['Affectieve polarisatie', 'Waarom hebben we een hekel aan mensen die anders stemmen? De psychologie en de politiek van wij-zij-denken.'],
+      ['Polarisatie & democratie', 'Ondermijnt polarisatie echt de democratie? Wat zegt de wetenschap, en wat kunnen we eraan doen?'],
+      ['Affectieve polarisatie', 'Waarom hebben we een hekel aan mensen die politiek anders zijn? Is dat een probleem? De psychologie en de politiek van wij-zij-denken.'],
       ['Institutioneel ontwerp & conflict', 'Hoe bepalen politieke instellingen de manier waarop samenlevingen omgaan met diepe meningsverschillen? Lessen uit België en daarbuiten.'],
     ],
 

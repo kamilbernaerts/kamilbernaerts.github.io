@@ -431,6 +431,32 @@ main > .section:last-child > .container--narrow { border-bottom: none; }
   color: var(--ink-soft);
 }
 
+/* A plain list with a rule between the items */
+.plain-list { list-style: none; }
+
+.plain-list li {
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--rule-soft);
+  color: var(--ink-soft);
+}
+
+.plain-list li:first-child { border-top: none; padding-top: 0; }
+
+/* The booking block on the Public speaking page */
+.book {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  background: var(--accent-tint);
+}
+
+.book h2 { margin-bottom: 0.4rem; }
+.book p { max-width: 54ch; color: var(--ink-soft); }
+.book .book__email { margin-top: 0.5rem; font-size: 1.1875rem; font-weight: 600; color: var(--ink); }
+
 /* ===== CARDS — a short item in a column, set off by a rule ===== */
 .card {
   padding-top: 0.9rem;

@@ -116,6 +116,32 @@ export const published = [
 
 export const workingPapers = [
   {
+    title: 'Rethinking polarisation: how its conflictual origins explain a contested relation with democracy',
+    authors: me,
+    venue: 'Politics of the Low Countries',
+    year: 'Under review',
+  },
+  {
+    title: 'From out party to out community: how solidarity orientations shape political intolerance under affective polarisation',
+    authors: `Thijssen, P. &amp; ${me}`,
+    year: 'Working paper',
+  },
+  {
+    title: 'From party dislike to citizen attitudes: rethinking affective polarization',
+    authors: `Russo, L. &amp; ${me}`,
+    year: 'Working paper',
+  },
+  {
+    title: 'Polarized at whom? The importance of directional affective polarisation in explaining support for liberal democracy',
+    authors: me,
+    year: 'Working paper',
+  },
+  {
+    title: 'Smarty-pants vs simpletons? Exploring affective polarisation between education-based groups',
+    authors: `${me} &amp; Kavadias, L.`,
+    year: 'Working paper',
+  },
+  {
     title: 'Beyond the culture wars? Assessing the socio-economic determinants of affective polarization',
     authors: `${me}, ${matthieu}, ${junius}; ${caluwaerts}`,
     year: 'Working paper',

@@ -79,7 +79,7 @@ export const text = {
     switchLabel: 'English',
     switchHref: '/public-speaking/',
 
-    aboutTitle: 'Wat ik breng',
+    aboutTitle: 'Polarisatie vs democratie?',
     about: [
       'Polarisatie is alomtegenwoordig in de media en het publieke debat, maar tegelijk is het vaak niet helemaal duidelijk wat er precies mee wordt bedoeld en welke effecten het precies heeft. In mijn lezingen zet ik een stap terug en verken ik de vraag of polarisatie wel degelijk een probleem is voor democratie: welke vormen van polarisatie bedreigen de democratie, welke vormen van polarisatie heeft een democratie net nodig, en wat kunnen instellingen en burgers doen om de schadelijke effecten te counteren?',
       'Ik spreek graag voor een breed publiek: vakbonden, lokale besturen, middenveldorganisaties, scholen, mediaprofessionals, bedrijven en eenieder die een gezonde dosis interesse heeft in het onderwerp. Elke lezing is afgestemd op het publiek en gebaseerd op zowel mijn onderzoek als de huidige state of the art.',

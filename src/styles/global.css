@@ -412,6 +412,25 @@ main > .section:last-child > .container--narrow { border-bottom: none; }
   color: var(--ink-soft);
 }
 
+/* A list of two-line items: what on the first line, where on the second */
+.pairs {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.pairs li { display: flex; flex-direction: column; }
+
+.pairs__main { font-size: 1rem; line-height: 1.35; color: var(--ink); }
+
+.pairs__sub {
+  font-size: var(--text-sm);
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
 /* ===== CARDS — a short item in a column, set off by a rule ===== */
 .card {
   padding-top: 0.9rem;

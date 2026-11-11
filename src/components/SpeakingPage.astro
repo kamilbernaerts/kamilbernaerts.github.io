@@ -1,0 +1,155 @@
+---
+// The Public speaking page, in one language. All text comes from src/data/speaking.js.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from './PageHeader.astro';
+import LinkCard from './LinkCard.astro';
+import { text, media, email } from '../data/speaking.js';
+
+const { lang = 'en' } = Astro.props;
+const t = text[lang];
+---
+
+<BaseLayout title={t.pageTitle} description={t.description} lang={lang}>
+
+  <PageHeader title={t.pageTitle} lead={t.lead}>
+    <a href="#book" class="btn">{t.book}</a>
+    <a href={t.switchHref} class="btn btn--outline" lang={lang === 'en' ? 'nl' : 'en'}>{t.switchLabel}</a>
+  </PageHeader>
+
+  <!-- WHAT I BRING -->
+  <section class="section">
+    <div class="container">
+      <div class="split split--even">
+        <div class="prose">
+          <h2>{t.aboutTitle}</h2>
+          {t.about.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        <figure class="figure">
+          <img src="/images/public-speaking.jpg" alt="Kamil Bernaerts giving a public lecture" />
+          <figcaption>{t.photoCredit}</figcaption>
+        </figure>
+      </div>
+      <div class="grid-3" style="margin-top: 2rem;">
+        {t.facts.map(([label, value]) => (
+          <div class="fact">
+            <p class="fact__label">{label}</p>
+            <p class="fact__value">{value}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS -->
+  <section class="section" id="topics">
+    <div class="container">
+      <div class="section__head">
+        <h2>{t.topicsTitle}</h2>
+      </div>
+      <div class="grid-3">
+        {t.topics.map(([title, body]) => (
+          <div class="card">
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATS + APPEARANCES -->
+  <section class="section" id="lectures">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <h2>{t.formatsTitle}</h2>
+          <ul class="plain-list">
+            {t.formats.map((format) => <li>{format}</li>)}
+          </ul>
+        </div>
+        <div>
+          <h2>{t.appearancesTitle}</h2>
+          <ul class="plain-list">
+            <li><a href="https://www.vub.be/nl/nieuws/vub-pact-school-tour-caroline-pauwels-atheneum-polarisatie" target="_blank" rel="noopener">VUB PACT School Tour ↗</a> {t.pactNote}</li>
+            <li><a href="https://checkfirst.network/event/lunch-lecture-with-kamil-bernaerts/" target="_blank" rel="noopener">EDMO BELUX Lunch Lecture ↗</a></li>
+            <li><a href="https://puc.kuleuven.be/nl/opleiding/polarisatie-8adjxg90jwgep574/" target="_blank" rel="noopener">KU Leuven Metaforum ↗</a> {t.metaforumNote}</li>
+            <li>{t.haiEvents}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK -->
+  <section class="section" id="book">
+    <div class="container">
+      <div class="book">
+        <div>
+          <h2>{t.bookTitle}</h2>
+          <p>{t.bookText}</p>
+          <p class="book__email"><a href={`mailto:${email}`}>{email}</a></p>
+        </div>
+        <a href="/contact/" class="btn btn--outline">{t.bookButton}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IN THE MEDIA -->
+  <section class="section" id="media">
+    <div class="container">
+      <div class="section__head">
+        <h2>{t.mediaTitle}</h2>
+        <p>{t.mediaLead}</p>
+      </div>
+      <div class="entry-list">
+        {media.map((item) => (
+          <div class="entry">
+            <div>
+              <h3 class="entry__title">{item.title}</h3>
+              <p class="entry__sub"><a href={item.url} target="_blank" rel="noopener">{item.outlet} ↗</a></p>
+            </div>
+            <div class="entry__meta"><p>{item.year}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLIC WRITING -->
+  <section class="section" id="public-writing">
+    <div class="container">
+      <div class="section__head">
+        <h2>{t.writingTitle}</h2>
+        <p>{t.writingLead}</p>
+      </div>
+      <div class="entry-list">
+        <div class="entry">
+          <div>
+            <h3 class="entry__title"><a href="/writing/vdem-2025-nl/" lang="nl">De autocratiserende tsunami is aan land gekomen in het Westen</a></h3>
+            <p class="entry__sub">kamilbernaerts.com · {t.republished} <a href="https://hannah-arendt.institute/nieuws/autocratisering-westen-democratie-wereldwijd-onder-druk/" target="_blank" rel="noopener">Hannah Arendt Instituut ↗</a></p>
+          </div>
+          <div class="entry__meta"><p>2026</p></div>
+        </div>
+      </div>
+      <a href="/writing/" class="more-link">{t.allWriting}</a>
+    </div>
+  </section>
+
+  <!-- HAI -->
+  <section class="section" id="hai">
+    <div class="container">
+      <div class="split">
+        <div class="prose">
+          <h2>{t.haiTitle}</h2>
+          {t.hai.map((paragraph) => <p set:html={paragraph} />)}
+        </div>
+        <div class="stack">
+          <img src="/images/hai-logo.svg" alt="Hannah Arendt Instituut logo" style="height: 64px; width: auto; align-self: flex-start; margin-bottom: 0.5rem;" />
+          <LinkCard href="https://hannah-arendt.institute/project/democratie-en-polarisatie/" title={t.haiProfile} sub="Democratie en polarisatie" />
+          <LinkCard href="mailto:kamil.bernaerts@hannah-arendt.institute" title={t.haiEmail} sub="kamil.bernaerts@hannah-arendt.institute" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
